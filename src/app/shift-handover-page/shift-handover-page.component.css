@@ -8,20 +8,14 @@ table {
 }
 
 #editShiftHandoverButton{
-  background-color: deepskyblue;
+  background-color: #89c3eb;
   color: white;
   padding-left: 25px;
   padding-right: 25px;
   margin: 5px;
 }
 
-#deleteShiftHandoverButton{
-  background-color: coral;
-  color: white;
-  margin: 5px;
-}
-
 #addShiftHandoverButton{
-  background-color:aquamarine;
-  color: black;
+  background-color:#eb6ea5;
+  color: white;
 }

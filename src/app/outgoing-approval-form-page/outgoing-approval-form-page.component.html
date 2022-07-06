@@ -1,6 +1,6 @@
 <div *ngIf="shiftHandoverData">
   <div class="row">
-    <div class="col" style="background-color:lightcyan; margin-left: 1em;">
+    <div class="col" style="background-color:#89c3eb; margin-left: 1em;">
       <h2>
         <label><b>Shift Handover ID:</b></label> {{shiftHandoverData.id}}
       </h2>
@@ -50,7 +50,7 @@
 
       <div id="incomingApprovalData">
         <p>
-          <label><b>Incoming approved by:</b></label><br>{{shiftHandoverData.incomingapprovelby}}, {{shiftHandoverData.shiftdate03 | date}}
+          <label><b>Incoming approved by:</b></label><br>{{shiftHandoverData.incomingapprovelby}} ({{shiftHandoverData.shiftdate03 | date}})
         </p>
         <p>
           <label><b>Incoming with comment:</b></label><br>{{shiftHandoverData.incomingwithcomment}}
