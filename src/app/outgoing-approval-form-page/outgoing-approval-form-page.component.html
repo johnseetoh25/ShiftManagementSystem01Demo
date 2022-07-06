@@ -210,30 +210,32 @@
 
   <br>
   <h2>Maintenance Items</h2>
-  <table>
-    <tr>
-      <th>Description</th>
-      <th>Tag ID</th>
-      <th>Notification</th>
-      <th>Work Order</th>
-      <th>Planned Start Time</th>
-      <th>Planned End Time</th>
-      <th>Permit</th>
-      <th>Status</th>
-      <th>Priority</th>
-    </tr>
-    <tr *ngFor="let maintenances of shiftHandoverData.maintenance_items">
-      <td>{{maintenances.maintenancedescription}}</td>
-      <td>{{maintenances.maintenancetagid}}</td>
-      <td>{{maintenances.maintenancenotificationno}} <br> {{maintenances.maintenancenotificationstatus}}</td>
-      <td>{{maintenances.maintenanceworkoderno}} <br> {{maintenances.maintenanceworkorderstatus}}</td>
-      <td>{{maintenances.maintenanceplanedstartdate | date}}</td>
-      <td>{{maintenances.maintenanceplannedenddate | date}}</td>
-      <td>{{maintenances.maintenancepermitnumber}} <br> {{maintenances.maintenancepermitstatus}}</td>
-      <td>{{maintenances.maintenancestatus}}</td>
-      <td>{{maintenances.maintenancepriority}}</td>
-    </tr>
-  </table>
+  <div class="MaintenanceItemDetailsTable">
+    <table>
+      <tr>
+        <th>Description</th>
+        <th>Tag ID</th>
+        <th>Notification</th>
+        <th>Work Order</th>
+        <th>Planned Start Time</th>
+        <th>Planned End Time</th>
+        <th>Permit</th>
+        <th>Status</th>
+        <th>Priority</th>
+      </tr>
+      <tr *ngFor="let maintenances of shiftHandoverData.maintenance_items">
+        <td>{{maintenances.maintenancedescription}}</td>
+        <td>{{maintenances.maintenancetagid}}</td>
+        <td>{{maintenances.maintenancenotificationno}} <br> {{maintenances.maintenancenotificationstatus}}</td>
+        <td>{{maintenances.maintenanceworkoderno}} <br> {{maintenances.maintenanceworkorderstatus}}</td>
+        <td>{{maintenances.maintenanceplanedstartdate | date}}</td>
+        <td>{{maintenances.maintenanceplannedenddate | date}}</td>
+        <td>{{maintenances.maintenancepermitnumber}} <br> {{maintenances.maintenancepermitstatus}}</td>
+        <td>{{maintenances.maintenancestatus}}</td>
+        <td>{{maintenances.maintenancepriority}}</td>
+      </tr>
+    </table>
+  </div>
 
   <br>
   <h2>Shift Manning</h2>

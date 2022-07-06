@@ -84,7 +84,7 @@ tr:hover {
   background-color:lightgrey;
 }
 
-.SafetyLogsTableForm{
+.MaintenanceItemDetailsTable{
   width: 100%;
   overflow: auto;
   table-layout: fixed;
