@@ -29,8 +29,8 @@
         </ng-container>
 
         <ng-container matColumnDef="incoming status">
-          <th mat-header-cell *matHeaderCellDef>Status</th>
-          <td mat-cell *matCellDef="let row"></td>
+          <th mat-header-cell *matHeaderCellDef>Approval By</th>
+          <td mat-cell *matCellDef="let row">{{row.incomingapprovelby}}</td>
         </ng-container>
 
         <ng-container matColumnDef="action" >
