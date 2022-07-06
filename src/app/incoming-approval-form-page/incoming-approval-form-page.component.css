@@ -1,0 +1,95 @@
+p{
+  font-size: 15px;
+}
+
+label{
+  font-family: Arial, sans-serif;
+  font-size: 16.5px;
+}
+
+mat-form-field{
+  width: 100%;
+}
+
+#outgoingApprovalData{
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+#incomingApprovalDetailsLists{
+  padding-bottom: 60px;
+}
+
+/*Columns in Row CSS*/
+*{
+  box-sizing: border-box;
+}
+
+.col {
+  float: left;
+  width: 50%;
+
+  padding-top: 20px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 20px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.col0101{
+  float: left;
+  width: 60%;
+}
+
+.col0201{
+  float: left;
+  width: 40%;
+}
+
+.row01:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 576px) {
+  .col{
+    width: 100%;
+  }
+}
+
+/*Table CSS*/
+table{
+  width: 100%;
+}
+
+td, tr{
+  border: 1px solid;
+  padding: 10px;
+}
+
+td{
+  font-size: 15px;
+}
+
+th{
+  border: 1px solid;
+  padding: 10px;
+  text-align: center;
+  background-color: palevioletred;
+}
+
+tr:hover {
+  background-color:lightgrey;
+}
+
+.SafetyLogsTableForm{
+  width: 100%;
+  overflow: auto;
+  table-layout: fixed;
+}

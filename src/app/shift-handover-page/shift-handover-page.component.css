@@ -1,0 +1,27 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+#editShiftHandoverButton{
+  background-color: deepskyblue;
+  color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin: 5px;
+}
+
+#deleteShiftHandoverButton{
+  background-color: coral;
+  color: white;
+  margin: 5px;
+}
+
+#addShiftHandoverButton{
+  background-color:aquamarine;
+  color: black;
+}

@@ -1,0 +1,14 @@
+.grid-container{
+  width: 100%;
+  display: grid;
+  row-gap: 10px;
+}
+
+.grid-item{
+  width: 100%;
+  padding: 15px;
+}
+
+button{
+  background-color: aquamarine;
+}

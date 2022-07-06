@@ -1,0 +1,127 @@
+mat-form-field{
+  width: 100%;
+  padding: 0.5em;
+}
+
+#deleteIconRowBtn{
+  color: salmon;
+}
+
+#addFormsRowBtn{
+  background-color: skyblue;
+  color:white;
+  width: 10rem;
+}
+
+/*Columns in Row CSS*/
+*{
+  box-sizing: border-box;
+}
+
+.col {
+  float: left;
+  width: 50%;
+  padding: 0px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.col0101{
+  float: left;
+  width: 60%;
+}
+
+.col0201{
+  float: left;
+  width: 40%;
+}
+
+.row01:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 576px) {
+  .col{
+    width: 100%;
+  }
+}
+
+/*Table CSS*/
+table{
+  width: 100%;
+}
+
+td, tr{
+  border: 1px solid;
+}
+
+th{
+  border: 1px solid;
+  padding: 10px;
+  text-align: center;
+  background-color: palevioletred;
+}
+
+tr:hover {
+  background-color:lightgrey;
+}
+
+.SafetyLogsTableForm{
+  width: 100%;
+  overflow: auto;
+  table-layout: fixed;
+}
+
+.OverrideLogsTableForm{
+  width: 100%;
+  overflow: auto;
+  table-layout: fixed;
+}
+
+.PermitToWorkTableForm{
+  width: 100%;
+  overflow: auto;
+  table-layout: fixed;
+}
+
+.DaillyOperationInstructionTableForm{
+  width: 100%;
+  overflow: auto;
+  table-layout: fixed;
+}
+
+.StandingInstructionTableForm{
+  width: 100%;
+  overflow: auto;
+  table-layout: fixed;
+}
+
+.BasicOperationCareTableForm{
+  width: 100%;
+  overflow: auto;
+  table-layout: fixed;
+}
+
+.HighlightsOperationalLogsTableForm{
+  width: 100%;
+  overflow: auto;
+  table-layout: fixed;
+}
+
+.MaintenanceItemTableForm{
+  width: 100%;
+  overflow: auto;
+  table-layout: fixed;
+}
+
+.ShiftManingTableForm{
+  width: 100%;
+  overflow: auto;
+  table-layout: fixed;
+}

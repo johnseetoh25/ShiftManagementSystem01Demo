@@ -1,0 +1,809 @@
+<h3>Add Operation Dialy Summary</h3>
+
+  <form [formGroup]="shifthandoverForm">
+    <div name="base form">
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="fill">
+            <mat-label>Date</mat-label>
+            <input matInput [matDatepicker]="picker01" formControlName="shiftdate01">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker01"></mat-datepicker-toggle>
+            <mat-datepicker #picker01></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Shift</mat-label>
+            <input matInput formControlName="shift">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Team</mat-label>
+            <input matInput formControlName="team">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Subrole</mat-label>
+            <input matInput formControlName="subrole">
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <div class="row01">
+            <div class="col0101">
+              <mat-form-field appearance="fill" floatLabel="never" >
+                <mat-label>Outgoing approved by</mat-label>
+                <input matInput placeholder = "Disabled" formControlName="outgoingapprovedby">
+              </mat-form-field>
+            </div>
+            <div class="col0201">
+              <mat-form-field appearance="fill">
+                <mat-label>Date</mat-label>
+                <input matInput [matDatepicker]="picker02" formControlName="shiftdate02" placeholder="unabled to field in date" readonly="true">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker02" disabled></mat-datepicker-toggle>
+                <mat-datepicker #picker02></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Outgoing with comment</mat-label>
+            <input matInput formControlName="outgoingwithcomment" placeholder="unabled to field in form" readonly="true">
+          </mat-form-field>
+
+          <div class="row01">
+            <div class="col0101">
+              <mat-form-field appearance="fill">
+                <mat-label>Incoming approved by</mat-label>
+                <input matInput formControlName="incomingapprovelby" placeholder="unabled to field in form" readonly="true">
+              </mat-form-field>
+            </div>
+            <div class="col0201">
+              <mat-form-field appearance="fill">
+                <mat-label>Date</mat-label>
+                <input matInput [matDatepicker]="picker03" formControlName="shiftdate03" placeholder="unabled to field in date" readonly="true">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker03" disabled></mat-datepicker-toggle>
+                <mat-datepicker #picker03></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Incoming with comment</mat-label>
+            <input matInput formControlName="incomingwithcomment" placeholder="unabled to field in form" readonly="true">
+          </mat-form-field>
+
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <div name="health safety security environment">
+      <h2>Health, Safety, Security and Enviromenet</h2>
+      <h4>Safety Logs</h4>
+      <div class="SafetyLogsTableForm" formArrayName="safety_logs">
+        <table>
+          <tr>
+            <th style="width: 65%;">Description</th>
+            <th style="width: 20%;">Log Date Time</th>
+            <th style="width: 10%;">Status</th>
+            <th style="width: 5%;"></th>
+          </tr>
+
+          <tr *ngFor="let safetylogsitem of safetyLogs.controls; let safetylogsIndex = index" [formGroupName]="safetylogsIndex">
+            <td>
+              <mat-form-field appearance="fill">
+                <textarea matInput formControlName="safetydescription"></textarea>
+              </mat-form-field>
+            </td>
+            <td>
+              <div class="row01">
+                <div class="col0101">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Date</mat-label>
+                    <input matInput [matDatepicker]="picker04" formControlName="safetylogdate04">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker04"></mat-datepicker-toggle>
+                    <mat-datepicker #picker04></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div class="col0201">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Time</mat-label>
+                    <input matInput [ngxTimepicker]="timepicker01" formControlName="safetylogtime01">
+                    <ngx-material-timepicker-toggle matSuffix [for]="timepicker01" ></ngx-material-timepicker-toggle>
+                    <mat-hint>HH:MM</mat-hint>
+                    <ngx-material-timepicker #timepicker01></ngx-material-timepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <input matInput formControlName="safetystatus">
+              </mat-form-field>
+            </td>
+            <td [align]=" 'center' ">
+              <button mat-icon-button id="deleteIconRowBtn" (click)="deleteSafetyRow(safetylogsIndex)"><mat-icon>delete</mat-icon></button>
+            </td>
+          </tr>
+          <tr [align]=" 'right' ">
+            <td colspan="4"><button mat-flat-button id="addFormsRowBtn" (click)="addSafetyRow()"><mat-icon>add</mat-icon>Add Row</button></td>
+          </tr>
+        </table>
+      </div>
+
+      <br>
+      <h4>Override Logs</h4>
+      <div class="OverrideLogsTableForm" formArrayName="override_logs">
+        <table>
+          <tr>
+            <th style="width: 50%;">Description</th>
+            <th style="width: 15%;">Log Date Time</th>
+            <th style="width: 15%;">Status</th>
+            <th style="width: 15%;">Tag ID</th>
+            <th style="width: 5%;"></th>
+          </tr>
+
+          <tr *ngFor="let overridelogsitem of overrideLogs.controls; let overridelogIndex = index" [formGroupName]="overridelogIndex">
+            <td>
+              <mat-form-field appearance="fill">
+                <textarea matInput formControlName="overridedescription"></textarea>
+              </mat-form-field>
+            </td>
+            <td>
+              <div class="row01">
+                <div class="col0101">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Date</mat-label>
+                    <input matInput [matDatepicker]="picker05" formControlName="overridelogdate05">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker05"></mat-datepicker-toggle>
+                    <mat-datepicker #picker05></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div class="col0201">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Time</mat-label>
+                    <input matInput [ngxTimepicker]="timepicker02" formControlName="overridelogtime02">
+                    <ngx-material-timepicker-toggle matSuffix [for]="timepicker02" ></ngx-material-timepicker-toggle>
+                    <mat-hint>HH:MM</mat-hint>
+                    <ngx-material-timepicker #timepicker02></ngx-material-timepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <input matInput formControlName="overridestatus">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <input matInput formControlName="overridetagid">
+              </mat-form-field>
+            </td>
+            <td [align]=" 'center' ">
+              <button mat-icon-button id="deleteIconRowBtn" (click)="deleteOverrideRow(overridelogIndex)"><mat-icon>delete</mat-icon></button>
+            </td>
+          </tr>
+          <tr [align]=" 'right' ">
+            <td colspan="6"><button mat-flat-button id="addFormsRowBtn" (click)="addOverrideRow()"><mat-icon>add</mat-icon>Add Row</button></td>
+          </tr>
+        </table>
+      </div>
+
+      <br>
+      <h4>Permit to Work</h4>
+      <div class="PermitToWorkTableForm" formArrayName="permit_to_works">
+        <table>
+          <tr>
+            <th style="width: 55%;">Description</th>
+            <th>Type</th>
+            <th>Permit ID</th>
+            <th>Status</th>
+            <th>Priority</th>
+            <th style="width: 5%;"></th>
+          </tr>
+
+          <tr *ngFor="let permittoworkitem of permitToWorks.controls; let permittoworkIndex = index" [formGroupName]="permittoworkIndex">
+            <td>
+              <mat-form-field appearance="fill">
+                <textarea matInput formControlName="permitdescription"></textarea>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <input matInput formControlName="permittype">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <input matInput formControlName="permitid">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <input matInput formControlName="permitstatus">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <input matInput formControlName="permitpriority">
+              </mat-form-field>
+            </td>
+            <td [align]=" 'center' ">
+              <button mat-icon-button id="deleteIconRowBtn" (click)="deletePermitRow(permittoworkIndex)"><mat-icon>delete</mat-icon></button>
+            </td>
+          </tr>
+          <tr [align]=" 'right' ">
+            <td colspan="6"><button mat-flat-button id="addFormsRowBtn" (click)="addPermitRow()"><mat-icon>add</mat-icon>Add Row</button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <br>
+    <div name="instructions">
+      <h2>Instructions</h2>
+      <h4>Dailly Operation Instruction</h4>
+      <div class="DaillyOperationInstructionTableForm">
+        <table>
+          <tr>
+            <th style="width: 50%;">Description</th>
+            <th style="width: 16%;">Planned Start Time</th>
+            <th style="width: 16%;">Planned End Time</th>
+            <th style="width: 9%;">Status</th>
+            <th style="width: 9%;">Priority</th>
+          </tr>
+
+          <tr>
+            <td>
+              <mat-form-field appearance="fill">
+                <textarea matInput formControlName="dailyoperationdescription"></textarea>
+              </mat-form-field>
+            </td>
+            <td>
+              <div class="row01">
+                <div class="col0101">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Date</mat-label>
+                    <input matInput [matDatepicker]="picker06" formControlName="dailyoperationstartdate06">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker06"></mat-datepicker-toggle>
+                    <mat-datepicker #picker06></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div class="col0201">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Time</mat-label>
+                    <input matInput [ngxTimepicker]="timepicker03" formControlName="dailyoperationstarttime03">
+                    <ngx-material-timepicker-toggle matSuffix [for]="timepicker03" ></ngx-material-timepicker-toggle>
+                    <mat-hint>HH:MM</mat-hint>
+                    <ngx-material-timepicker #timepicker03></ngx-material-timepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="row01">
+                <div class="col0101">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Date</mat-label>
+                    <input matInput [matDatepicker]="picker07" formControlName="dailyoperationenddate07">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker07"></mat-datepicker-toggle>
+                    <mat-datepicker #picker07></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div class="col0201">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Time</mat-label>
+                    <input matInput [ngxTimepicker]="timepicker04" formControlName="dailyoperationendtime04">
+                    <ngx-material-timepicker-toggle matSuffix [for]="timepicker04" ></ngx-material-timepicker-toggle>
+                    <mat-hint>HH:MM</mat-hint>
+                    <ngx-material-timepicker #timepicker04></ngx-material-timepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <mat-select placeholder="Select Status" formControlName="dailyoperationstatus">
+                  <mat-option value="Approved">Approved</mat-option>
+                  <mat-option value="In Progress">In Progress</mat-option>
+                  <mat-option value="Disapproved">Disapproved</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <mat-select placeholder="Select Priority" formControlName="dailyoperationpriority">
+                  <mat-option value="High">High</mat-option>
+                  <mat-option value="Low">Low</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <br>
+      <h4>Standing Instruction</h4>
+      <div class="StandingInstructionTableForm" formArrayName="standing_instruction">
+        <table>
+          <tr>
+            <th style="width: 45%;">Description</th>
+            <th style="width: 17%;">Planned Start Time</th>
+            <th style="width: 17%;">Planned End Time</th>
+            <th style="width: 8%;">Status</th>
+            <th style="width: 8%;">Tag ID</th>
+            <th style="width: 5%;"></th>
+          </tr>
+
+          <tr *ngFor="let standinginstructionitem of standingInstructions.controls; let standinginstructionIndex = index" [formGroupName]="standinginstructionIndex">
+            <td>
+              <mat-form-field appearance="fill">
+                <textarea matInput formControlName="standingdescription"></textarea>
+              </mat-form-field>
+            </td>
+            <td>
+              <div class="row01">
+                <div class="col0101">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Date</mat-label>
+                    <input matInput [matDatepicker]="picker08" formControlName="standingstartdate08">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker08"></mat-datepicker-toggle>
+                    <mat-datepicker #picker08></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div class="col0201">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Time</mat-label>
+                    <input matInput [ngxTimepicker]="timepicker05" formControlName="standingstarttime05">
+                    <ngx-material-timepicker-toggle matSuffix [for]="timepicker05" ></ngx-material-timepicker-toggle>
+                    <mat-hint>HH:MM</mat-hint>
+                    <ngx-material-timepicker #timepicker05></ngx-material-timepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="row01">
+                <div class="col0101">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Date</mat-label>
+                    <input matInput [matDatepicker]="picker09" formControlName="standingenddate09">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker09"></mat-datepicker-toggle>
+                    <mat-datepicker #picker09></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div class="col0201">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Time</mat-label>
+                    <input matInput [ngxTimepicker]="timepicker06" formControlName="standingendtime06">
+                    <ngx-material-timepicker-toggle matSuffix [for]="timepicker06" ></ngx-material-timepicker-toggle>
+                    <mat-hint>HH:MM</mat-hint>
+                    <ngx-material-timepicker #timepicker06></ngx-material-timepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <mat-select placeholder="Select status" formControlName="standingstatus">
+                  <mat-option value="Approved">Approved</mat-option>
+                  <mat-option value="In Progress">In Progress</mat-option>
+                  <mat-option value="Disapproved">Disapproved</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <mat-select placeholder="Select status" formControlName="standingpriority">
+                  <mat-option value="High">High</mat-option>
+                  <mat-option value="Low">Low</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+            <td [align]=" 'center' ">
+              <button mat-icon-button id="deleteIconRowBtn" (click)="deleteStandingInstructionRow(standinginstructionIndex)"><mat-icon>delete</mat-icon></button>
+            </td>
+          </tr>
+          <tr [align]=" 'right' ">
+            <td colspan="6"><button mat-flat-button id="addFormsRowBtn" (click)="addStandingInstructionRow()"><mat-icon>add</mat-icon>Add Row</button></td>
+          </tr>
+        </table>
+      </div>
+
+      <br>
+      <h4>Basic Operation Care</h4>
+      <div class="BasicOperationCareTableForm">
+        <table>
+          <tr>
+            <th style="width: 50%;">Description</th>
+            <th style="width: 15%;">Planned Start Time</th>
+            <th style="width: 15%;">Planned End Time</th>
+            <th style="width: 10%;">Status</th>
+            <th style="width: 10%;" colspan="2">Priority</th>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field appearance="fill">
+                <textarea matInput formControlName="operationcaredescription"></textarea>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <mat-label>Date</mat-label>
+                <input matInput [matDatepicker]="picker10" formControlName="operationcarestartdate">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker10"></mat-datepicker-toggle>
+                <mat-datepicker #picker10></mat-datepicker>
+              </mat-form-field>
+              <br>
+              <mat-form-field appearance="fill">
+                <mat-label>Time</mat-label>
+                <input matInput [ngxTimepicker]="timepicker07" formControlName="operationcarestarttime">
+                <ngx-material-timepicker-toggle matSuffix [for]="timepicker07"></ngx-material-timepicker-toggle>
+                <mat-hint>HH:MM</mat-hint>
+                <ngx-material-timepicker #timepicker07></ngx-material-timepicker>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <mat-label>Date</mat-label>
+                <input matInput [matDatepicker]="picker11" formControlName="operationcareenddate">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker11"></mat-datepicker-toggle>
+                <mat-datepicker #picker11></mat-datepicker>
+              </mat-form-field>
+              <br>
+              <mat-form-field appearance="fill">
+                <mat-label>Time</mat-label>
+                <input matInput [ngxTimepicker]="timepicker08" formControlName="operationcareendtime">
+                <ngx-material-timepicker-toggle matSuffix [for]="timepicker08" ></ngx-material-timepicker-toggle>
+                <mat-hint>HH:MM</mat-hint>
+                <ngx-material-timepicker #timepicker08></ngx-material-timepicker>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <mat-select placeholder="Select status" formControlName="operationcarestatus">
+                  <mat-option value="Approved">Approved</mat-option>
+                  <mat-option value="In Progress">In Progress</mat-option>
+                  <mat-option value="Disapproved">Disapproved</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+            <td colspan="2">
+              <mat-form-field appearance="fill">
+                <mat-select placeholder="Select status" formControlName="operationcarepriority">
+                  <mat-option value="High">High</mat-option>
+                  <mat-option value="Low">Low</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+
+        <table formArrayName="operation_care_checklist">
+          <tr>
+            <th colspan="6">Check List</th>
+          </tr>
+          <tr>
+            <th style="width: 50%;">Check List Descriptions</th>
+            <th style="width: 10%;">Result</th>
+            <th style="width: 10%;">Remark</th>
+            <th style="width: 10%;">Checked by</th>
+            <th style="width: 15%;">Checked Date</th>
+            <th style="width: 5%;"></th>
+          </tr>
+
+          <tr *ngFor="let checklistitem of operationCareChecklists.controls; let checklistIndex = index" [formGroupName]="checklistIndex">
+            <td>
+              <mat-form-field appearance="fill">
+                <textarea matInput formControlName="checklistdescriptions"></textarea>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <mat-select placeholder="Select status" formControlName="checklistresult">
+                  <mat-option value="Yes">Yes</mat-option>
+                  <mat-option value="No">No</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <textarea matInput formControlName="checklistremark"></textarea>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <textarea matInput formControlName="checklistcheckedby"></textarea>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <mat-label>Date</mat-label>
+                <input matInput [matDatepicker]="picker12" formControlName="checklistcheckeddate">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker12"></mat-datepicker-toggle>
+                <mat-datepicker #picker12></mat-datepicker>
+              </mat-form-field>
+              <br>
+              <mat-form-field appearance="fill">
+                <mat-label>Time</mat-label>
+                <input matInput [ngxTimepicker]="timepicker09" formControlName="checklistcheckedtime">
+                <ngx-material-timepicker-toggle matSuffix [for]="timepicker09" ></ngx-material-timepicker-toggle>
+                <mat-hint>HH:MM</mat-hint>
+                <ngx-material-timepicker #timepicker09></ngx-material-timepicker>
+              </mat-form-field>
+            </td>
+            <td [align]=" 'center' ">
+              <button mat-icon-button id="deleteIconRowBtn" (click)="deleteOperationCareChecklistRow(checklistIndex)"><mat-icon>delete</mat-icon></button>
+            </td>
+          </tr>
+          <tr [align]=" 'right' ">
+            <td colspan="6"><button mat-flat-button id="addFormsRowBtn" (click)="addOperationCareChecklistRow()"><mat-icon>add</mat-icon>Add Row</button></td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
+    <br>
+    <h2>Highlights (Operational Logs)</h2>
+    <div class="HighlightsOperationalLogsTableForm" name="highlights operational logs">
+      <div formArrayName="highlight_operational_logs">
+        <table>
+          <tr>
+            <th style="width: 10%;">Area</th>
+            <th style="width: 45%;">Description</th>
+            <th >Type</th>
+            <th style="width: 20%;">Log Date Time</th>
+            <th>Status</th>
+            <th style="width: 5%;"></th>
+          </tr>
+          <tr *ngFor="let highlightsitem of highlightsOperationalLogs.controls; let highlightIndex = index" [formArrayName]="highlightIndex">
+            <td>
+              <mat-form-field appearance="fill">
+                <input matInput formControlName="unitarea">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <textarea matInput formControlName="unitdescription"></textarea>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <mat-select placeholder="Select Type" formControlName="unittype">
+                  <mat-option value="Overrides">Overrides</mat-option>
+                  <mat-option value="General">General</mat-option>
+                  <mat-option value="Lab Sample">Lab Sample</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+            <td>
+              <div class="row01">
+                <div class="col0101">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Date</mat-label>
+                    <input matInput [matDatepicker]="picker13" formControlName="unitlogdate">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker13"></mat-datepicker-toggle>
+                    <mat-datepicker #picker13></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div class="col0201">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Time</mat-label>
+                    <input matInput [ngxTimepicker]="timepicker10" formControlName="unitlogtime">
+                    <ngx-material-timepicker-toggle matSuffix [for]="timepicker10" ></ngx-material-timepicker-toggle>
+                    <mat-hint>HH:MM</mat-hint>
+                    <ngx-material-timepicker #timepicker10></ngx-material-timepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <mat-select placeholder="Select Type" formControlName="unitstatus">
+                  <mat-option value="Closed">Closed</mat-option>
+                  <mat-option value="Information">Information</mat-option>
+                  <mat-option value="Open">Open</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+            <td [align]=" 'center' ">
+              <button mat-icon-button id="deleteIconRowBtn" (click)="deleteHighlightsOperationalLogRow(highlightIndex)"><mat-icon>delete</mat-icon></button>
+            </td>
+          </tr>
+          <tr [align]=" 'right' ">
+            <td colspan="6"><button mat-flat-button id="addFormsRowBtn" (click)="addHighlightsOperationalLogRow()"><mat-icon>add</mat-icon>Add Row</button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <br>
+    <h2>Maintenance Items</h2>
+    <div class="MaintenanceItemTableForm" name="maintenance items" formArrayName="maintenance_items">
+      <table>
+        <tr>
+          <th>Description</th>
+          <th>Tag ID</th>
+          <th>Notification</th>
+          <th>Work Order</th>
+          <th>Planned Start Time</th>
+          <th>Planned End Time</th>
+          <th>Permit</th>
+          <th>Status</th>
+          <th>Priority</th>
+          <th></th>
+        </tr>
+        <tr *ngFor="let maintenanceitem of maintenanceItems.controls; let maintenanceIndex = index" [formArrayName]="maintenanceIndex">
+          <td>
+            <mat-form-field appearance="fill">
+              <textarea matInput formControlName="maintenancedescription"></textarea>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="fill">
+              <input matInput formControlName="maintenancetagid">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Notification No.</mat-label>
+              <input matInput formControlName="maintenancenotificationno">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Notification Status</mat-label>
+              <input matInput formControlName="maintenancenotificationstatus">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Work Order No.</mat-label>
+              <input matInput formControlName="maintenanceworkoderno">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Work Order Status</mat-label>
+              <input matInput formControlName="maintenanceworkorderstatus">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Date</mat-label>
+              <input matInput [matDatepicker]="picker14" formControlName="maintenanceplanedstartdate">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix [for]="picker14"></mat-datepicker-toggle>
+              <mat-datepicker #picker14></mat-datepicker>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+              <mat-label>Time</mat-label>
+              <input matInput [ngxTimepicker]="timepicker11" formControlName="maintenanceplannedstarttime">
+              <ngx-material-timepicker-toggle matSuffix [for]="timepicker11" ></ngx-material-timepicker-toggle>
+              <mat-hint>HH:MM</mat-hint>
+              <ngx-material-timepicker #timepicker11></ngx-material-timepicker>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Date</mat-label>
+              <input matInput [matDatepicker]="picker15" formControlName="maintenanceplannedenddate">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix [for]="picker15"></mat-datepicker-toggle>
+              <mat-datepicker #picker15></mat-datepicker>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+              <mat-label>Time</mat-label>
+              <input matInput [ngxTimepicker]="timepicker12" formControlName="maintenanceplannedendtime">
+              <ngx-material-timepicker-toggle matSuffix [for]="timepicker12" ></ngx-material-timepicker-toggle>
+              <mat-hint>HH:MM</mat-hint>
+              <ngx-material-timepicker #timepicker12></ngx-material-timepicker>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Permit Number</mat-label>
+              <input matInput  formControlName="maintenancepermitnumber">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Permit Status</mat-label>
+              <mat-select placeholder="Select Permit Status" formControlName="maintenancepermitstatus">
+                <mat-option value="Approved">Approved</mat-option>
+                <mat-option value="In Progress">In Progress</mat-option>
+                <mat-option value="Disapproved">Disapproved</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-select placeholder="Select Status" formControlName="maintenancestatus">
+                <mat-option value="Approved">Approved</mat-option>
+                <mat-option value="In Progress">In Progress</mat-option>
+                <mat-option value="Disapproved">Disapproved</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-select placeholder="Select Priority" formControlName="maintenancepriority">
+                <mat-option value="High">High</mat-option>
+                <mat-option value="Low">Low</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td [align]=" 'center' ">
+            <button mat-icon-button id="deleteIconRowBtn" (click)="deleteMaintenanceItemRow(maintenanceIndex)"><mat-icon>delete</mat-icon></button>
+          </td>
+        </tr>
+        <tr [align]=" 'right' ">
+          <td colspan="13"><button mat-flat-button id="addFormsRowBtn" (click)="addMaintenanceItemRow()"><mat-icon>add</mat-icon>Add Row</button></td></tr>
+      </table>
+    </div>
+
+    <br>
+    <div name="shift Manning">
+      <h2>Shift Manning</h2>
+      <div class="ShiftManingTableForm" formArrayName="shift_mannings">
+        <table>
+          <tr>
+            <th style="width: 45%;">Name</th>
+            <th style="width: 25%;">Sub Role</th>
+            <th style="width: 25%;">Remarks</th>
+            <th style="width: 5%;"></th>
+          </tr>
+          <tr *ngFor="let shiftmanningitem of shiftMannings.controls; let shiftmanningIndex = index" [formArrayName]="shiftmanningIndex">
+            <td>
+              <mat-form-field appearance="fill">
+                <input matInput formControlName="shiftmanningname">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <mat-select placeholder="Select Sub Role" formControlName="shiftmanningsubrole">
+                  <mat-option value="Power User">Power User</mat-option>
+                  <mat-option value="Engineer">Engineer</mat-option>
+                  <mat-option value="Manager">Manager</mat-option>
+                  <mat-option value="Supervisor">Supervisor</mat-option>
+                  <mat-option value="Operator">Operator</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="fill">
+                <textarea matInput formControlName="shiftmanningremarks"></textarea>
+              </mat-form-field>
+            </td>
+            <td [align]=" 'center' "><button mat-icon-button id="deleteIconRowBtn" (click)="deleteShiftManningRow(shiftmanningIndex)"><mat-icon>delete</mat-icon></button></td>
+          </tr>
+          <tr [align]=" 'right' ">
+            <td colspan="4"><button mat-flat-button id="addFormsRowBtn" (click)="addShiftManningRow()"><mat-icon>add</mat-icon>Add Row</button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  </form>
+
+  <br>
+
+  <div [align]=" 'end' ">
+    <button mat-raised-button (click)="addShiftHandover()" style="background-color:mediumseagreen; color:white;" > Save </button>
+  </div>
+
+
+
+
+

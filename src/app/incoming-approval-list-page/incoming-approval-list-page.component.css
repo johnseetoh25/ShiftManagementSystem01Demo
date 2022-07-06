@@ -1,0 +1,14 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+#addIncomingApprovalButton{
+  background-color: darkviolet;
+  color: white;
+  margin: 5px;
+}
