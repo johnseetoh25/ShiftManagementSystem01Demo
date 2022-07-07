@@ -29,15 +29,15 @@
       <div class="col">
         <div class="row01">
           <div class="col0101">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" floatLabel="always" class="mat-form-field-readonly">
               <mat-label>Outgoing approved by</mat-label>
-              <input matInput formControlName="outgoingapprovedby" placeholder="unabled to field in form" readonly="true">
+              <input matInput formControlName="outgoingapprovedby" [readonly]="true" placeholder="Outgoing Approvel doesn't fill in yet">
             </mat-form-field>
           </div>
           <div class="col0201">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" floatLabel="always" class="mat-form-field-readonly">
               <mat-label>Date</mat-label>
-              <input matInput [matDatepicker]="picker02" formControlName="shiftdate02" placeholder="unabled to field in date" readonly="true">
+              <input matInput [matDatepicker]="picker02" formControlName="shiftdate02" [readonly]="true" placeholder="Outgoing Date doesn't fill in yet">
               <mat-hint>MM/DD/YYYY</mat-hint>
               <mat-datepicker-toggle matSuffix [for]="picker02" disabled></mat-datepicker-toggle>
               <mat-datepicker #picker02></mat-datepicker>
@@ -45,22 +45,22 @@
           </div>
         </div>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" floatLabel="always" class="mat-form-field-readonly">
           <mat-label>Outgoing with comment</mat-label>
-          <input matInput formControlName="outgoingwithcomment" placeholder="unabled to field in form" readonly="true">
+          <input matInput formControlName="outgoingwithcomment" [readonly]="true" placeholder="Outgoing Comment doesn't fill in yet">
         </mat-form-field>
 
         <div class="row01">
           <div class="col0101">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" floatLabel="always" class="mat-form-field-readonly">
               <mat-label>Incoming approved by</mat-label>
-              <input matInput formControlName="incomingapprovelby" placeholder="unabled to field in form" readonly="true">
+              <input matInput formControlName="incomingapprovelby" [readonly]="true" placeholder="Incoming Approvel doesn't fill in yet">
             </mat-form-field>
           </div>
           <div class="col0201">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" floatLabel="always" class="mat-form-field-readonly">
               <mat-label>Date</mat-label>
-              <input matInput [matDatepicker]="picker03" formControlName="shiftdate03" placeholder="unabled to field in date" readonly="true">
+              <input matInput [matDatepicker]="picker03" formControlName="shiftdate03" [readonly]="true" placeholder="Incoming Date doesn't fill in yet">
               <mat-hint>MM/DD/YYYY</mat-hint>
               <mat-datepicker-toggle matSuffix [for]="picker03" disabled></mat-datepicker-toggle>
               <mat-datepicker #picker03></mat-datepicker>
@@ -68,9 +68,9 @@
           </div>
         </div>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" floatLabel="always" class="mat-form-field-readonly">
           <mat-label>Incoming with comment</mat-label>
-          <input matInput formControlName="incomingwithcomment" placeholder="unabled to field in form" readonly="true">
+          <input matInput formControlName="incomingwithcomment" [readonly]="true"  placeholder="Incoming Comment doesn't fill in yet">
         </mat-form-field>
 
       </div>

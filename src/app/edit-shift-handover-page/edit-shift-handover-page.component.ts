@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { ShiftHandoverModels } from '../models/shift-handover-models';
 import { ApiService } from '../services/api.service';
 
 @Component({
@@ -13,6 +14,9 @@ export class EditShiftHandoverPageComponent implements OnInit {
   shifthandoverForm !: FormGroup;
   shifthandoverList !: any;
   id:any;
+  shiftHandoverData!: ShiftHandoverModels;
+
+  disabled: boolean = true;
 
   constructor(
     private formBuilder : FormBuilder,
@@ -27,7 +31,7 @@ export class EditShiftHandoverPageComponent implements OnInit {
       shift: new FormControl(''),
       team: new FormControl(''),
       subrole: new FormControl(''),
-      outgoingapprovedby:  new FormControl(''),
+      outgoingapprovedby: new FormControl(''),
       shiftdate02:  new FormControl(''),
       outgoingwithcomment:  new FormControl(''),
       incomingapprovelby: new FormControl(''),
@@ -71,12 +75,12 @@ export class EditShiftHandoverPageComponent implements OnInit {
     });
 
     // disable the form field for the special elements
-    this.shifthandoverForm.get("outgoingapprovedby")?.disable();
-    this.shifthandoverForm.get("shiftdate02")?.disable();
-    this.shifthandoverForm.get("outgoingwithcomment")?.disable();
-    this.shifthandoverForm.get("incomingapprovelby")?.disable();
-    this.shifthandoverForm.get("shiftdate03")?.disable();
-    this.shifthandoverForm.get("incomingwithcomment")?.disable();
+    //this.shifthandoverForm.get("outgoingapprovedby")!.disable();
+    //this.shifthandoverForm.get("shiftdate02")?.disable();
+    //this.shifthandoverForm.get("outgoingwithcomment")?.disable();
+    //this.shifthandoverForm.get("incomingapprovelby")?.disable();
+    //this.shifthandoverForm.get("shiftdate03")?.disable();
+    //this.shifthandoverForm.get("incomingwithcomment")?.disable();
 
   }
 

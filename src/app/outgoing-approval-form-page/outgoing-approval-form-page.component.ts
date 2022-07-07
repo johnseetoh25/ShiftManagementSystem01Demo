@@ -230,13 +230,15 @@ export class OutgoingApprovalFormPageComponent implements OnInit {
   }
 
   submitOutgoingApprovelData(){
-    this.api.editShiftHandover(this.addOutgoingApprovalForm.value, this.id)
-    .subscribe((res)=>{
-      const id = res.id;
-      alert("Your Outgoing Approval Successfully");
-    },()=>{
-      alert("Error while adding the record");
-    });
+    if(this.addOutgoingApprovalForm.valid){
+      this.api.editShiftHandover(this.addOutgoingApprovalForm.value, this.id)
+      .subscribe((res)=>{
+        const id = res.id;
+        alert("Your Outgoing Approval Successfully");
+      },()=>{
+        alert("Error while adding the record");
+      });
+    }
   }
 
   // object array for the sub-data
