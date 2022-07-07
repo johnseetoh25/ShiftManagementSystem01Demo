@@ -84,8 +84,8 @@
     <div class="SafetyLogsTableForm" formArrayName="safety_logs">
       <table>
         <tr>
-          <th style="width: 65%;">Description</th>
-          <th style="width: 20%;">Log Date Time</th>
+          <th style="width: 55%;">Description</th>
+          <th style="width: 25%;">Log Date Time</th>
           <th style="width: 10%;">Status</th>
           <th style="width: 5%;"></th>
         </tr>
@@ -138,10 +138,10 @@
     <div class="OverrideLogsTableForm" formArrayName="override_logs">
       <table>
         <tr>
-          <th style="width: 50%;">Description</th>
+          <th style="width: 60%;">Description</th>
           <th style="width: 15%;">Log Date Time</th>
-          <th style="width: 15%;">Status</th>
-          <th style="width: 15%;">Tag ID</th>
+          <th style="width: 10%;">Status</th>
+          <th style="width: 10%;">Tag ID</th>
           <th style="width: 5%;"></th>
         </tr>
 
@@ -199,10 +199,10 @@
       <table>
         <tr>
           <th style="width: 55%;">Description</th>
-          <th>Type</th>
-          <th>Permit ID</th>
-          <th>Status</th>
-          <th>Priority</th>
+          <th style="width: 10%;">Type</th>
+          <th style="width: 10%;">Permit ID</th>
+          <th style="width: 10%;">Status</th>
+          <th style="width: 10%;">Priority</th>
           <th style="width: 5%;"></th>
         </tr>
 
@@ -423,11 +423,11 @@
     <div class="BasicOperationCareTableForm">
       <table>
         <tr>
-          <th style="width: 50%;">Description</th>
+          <th style="width: 44%;">Description</th>
           <th style="width: 15%;">Planned Start Time</th>
           <th style="width: 15%;">Planned End Time</th>
           <th style="width: 10%;">Status</th>
-          <th style="width: 10%;">Priority</th>
+          <th style="width: 10%;" colspan="2">Priority</th>
         </tr>
         <tr>
           <td>
@@ -561,10 +561,10 @@
       <table>
         <tr>
           <th style="width: 10%;">Area</th>
-          <th style="width: 45%;">Description</th>
-          <th>Type</th>
-          <th style="width: 20%;">Log Date Time</th>
-          <th>Status</th>
+          <th style="width: 50%;">Description</th>
+          <th style="width: 10%;">Type</th>
+          <th style="width: 15%;">Log Date Time</th>
+          <th style="width: 10%;">Status</th>
           <th style="width: 5%;"></th>
         </tr>
         <tr *ngFor="let highlightsitem of highlightsOperationalLogs.controls; let highlightIndex = index" [formArrayName]="highlightIndex">
@@ -647,37 +647,37 @@
       </tr>
       <tr *ngFor="let maintenanceitem of maintenanceItems.controls; let maintenanceIndex = index" [formArrayName]="maintenanceIndex">
         <td>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 600px;">
             <textarea matInput formControlName="maintenancedescription"></textarea>
           </mat-form-field>
         </td>
         <td>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 200px;">
             <input matInput formControlName="maintenancetagid">
           </mat-form-field>
         </td>
         <td>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 200px;">
             <mat-label>Notification No.</mat-label>
             <input matInput formControlName="maintenancenotificationno">
           </mat-form-field>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 200px;">
             <mat-label>Notification Status</mat-label>
             <input matInput formControlName="maintenancenotificationstatus">
           </mat-form-field>
         </td>
         <td>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 200px;">
             <mat-label>Work Order No.</mat-label>
             <input matInput formControlName="maintenanceworkoderno">
           </mat-form-field>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 200px;">
             <mat-label>Work Order Status</mat-label>
             <input matInput formControlName="maintenanceworkorderstatus">
           </mat-form-field>
         </td>
         <td>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 150px;">
             <mat-label>Date</mat-label>
             <input matInput [matDatepicker]="picker14" formControlName="maintenanceplanedstartdate">
             <mat-hint>MM/DD/YYYY</mat-hint>
@@ -685,7 +685,7 @@
             <mat-datepicker #picker14></mat-datepicker>
           </mat-form-field>
           <br>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 150px;">
             <mat-label>Time</mat-label>
             <input matInput [ngxTimepicker]="timepicker11" formControlName="maintenanceplannedstarttime">
             <ngx-material-timepicker-toggle matSuffix [for]="timepicker11" ></ngx-material-timepicker-toggle>
@@ -694,7 +694,7 @@
           </mat-form-field>
         </td>
         <td>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 150px;">
             <mat-label>Date</mat-label>
             <input matInput [matDatepicker]="picker15" formControlName="maintenanceplannedenddate">
             <mat-hint>MM/DD/YYYY</mat-hint>
@@ -702,7 +702,7 @@
             <mat-datepicker #picker15></mat-datepicker>
           </mat-form-field>
           <br>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 150px;">
             <mat-label>Time</mat-label>
             <input matInput [ngxTimepicker]="timepicker12" formControlName="maintenanceplannedendtime">
             <ngx-material-timepicker-toggle matSuffix [for]="timepicker12" ></ngx-material-timepicker-toggle>
@@ -711,11 +711,11 @@
           </mat-form-field>
         </td>
         <td>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 200px;">
             <mat-label>Permit Number</mat-label>
             <input matInput  formControlName="maintenancepermitnumber">
           </mat-form-field>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 200px;">
             <mat-label>Permit Status</mat-label>
             <mat-select placeholder="Select Permit Status" formControlName="maintenancepermitstatus">
               <mat-option value="Approved">Approved</mat-option>
@@ -725,7 +725,7 @@
           </mat-form-field>
         </td>
         <td>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 200px;">
             <mat-select placeholder="Select Status" formControlName="maintenancestatus">
               <mat-option value="Approved">Approved</mat-option>
               <mat-option value="In Progress">In Progress</mat-option>
@@ -734,7 +734,7 @@
           </mat-form-field>
         </td>
         <td>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 200px;">
             <mat-select placeholder="Select Priority" formControlName="maintenancepriority">
               <mat-option value="High">High</mat-option>
               <mat-option value="Low">Low</mat-option>
@@ -756,9 +756,9 @@
     <div class="ShiftManingTableForm" formArrayName="shift_mannings">
       <table>
         <tr>
-          <th style="width: 45%;">Name</th>
-          <th style="width: 25%;">Sub Role</th>
-          <th style="width: 25%;">Remarks</th>
+          <th style="width: 55%;">Name</th>
+          <th style="width: 10%;">Sub Role</th>
+          <th style="width: 30%;">Remarks</th>
           <th style="width: 5%;"></th>
         </tr>
         <tr *ngFor="let shiftmanningitem of shiftMannings.controls; let shiftmanningIndex = index" [formArrayName]="shiftmanningIndex">

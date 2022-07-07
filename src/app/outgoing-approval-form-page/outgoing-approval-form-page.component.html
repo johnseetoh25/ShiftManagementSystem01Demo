@@ -50,7 +50,7 @@
 
       <div id="incomingApprovalData">
         <p>
-          <label><b>Incoming approved by:</b></label><br>{{shiftHandoverData.incomingapprovelby}} ({{shiftHandoverData.shiftdate03 | date}})
+          <label><b>Incoming approved by:</b></label><br>{{shiftHandoverData.incomingapprovelby}} <i>{{shiftHandoverData.shiftdate03 | date}}</i>
         </p>
         <p>
           <label><b>Incoming with comment:</b></label><br>{{shiftHandoverData.incomingwithcomment}}
@@ -65,13 +65,13 @@
     <h4>Safety Logs</h4>
     <table>
       <tr>
-        <th style="width: 65%;">Description</th>
-        <th style="width: 20%;">Log Date Time</th>
+        <th style="width: 60%;">Description</th>
+        <th style="width: 30%;">Log Date Time</th>
         <th style="width: 10%;">Status</th>
       </tr>
       <tr *ngFor="let safetylogs of shiftHandoverData.safety_logs">
         <td>{{safetylogs.safetydescription}}</td>
-        <td>{{safetylogs.safetylogdate04 | date}}, {{safetylogs.safetylogtime01}}</td>
+        <td>{{safetylogs.safetylogdate04 | date}} <i>{{safetylogs.safetylogtime01}}</i></td>
         <td>{{safetylogs.safetystatus}}</td>
       </tr>
     </table>
@@ -80,14 +80,14 @@
     <h4>Override Logs</h4>
     <table>
       <tr>
-        <th style="width: 50%;">Description</th>
-        <th style="width: 20%;">Log Date Time</th>
+        <th style="width: 60%;">Description</th>
+        <th style="width: 15%;">Log Date Time</th>
         <th style="width: 15%;">Status</th>
-        <th style="width: 15%;">Tag ID</th>
+        <th style="width: 10%;">Tag ID</th>
       </tr>
       <tr *ngFor="let overridelogs of shiftHandoverData.override_logs">
         <td>{{overridelogs.overridedescription}}</td>
-        <td>{{overridelogs.overridelogdate05 | date}}, {{overridelogs.overridelogtime02}}</td>
+        <td>{{overridelogs.overridelogdate05 | date}} <i>{{overridelogs.overridelogtime02}}</i></td>
         <td>{{overridelogs.overridestatus}}</td>
         <td>{{overridelogs.overridetagid}}</td>
       </tr>
@@ -98,10 +98,10 @@
       <table>
         <tr>
           <th style="width: 60%;">Description</th>
-          <th>Type</th>
-          <th>Permit ID</th>
-          <th>Status</th>
-          <th>Priority</th>
+          <th style="width: 10%;">Type</th>
+          <th style="width: 10%;">Permit ID</th>
+          <th style="width: 10%;">Status</th>
+          <th style="width: 10%;">Priority</th>
         </tr>
         <tr *ngFor="let permittoworks of shiftHandoverData.permit_to_works">
           <td>{{permittoworks.permitdescription}}</td>
@@ -125,8 +125,8 @@
       </tr>
       <tr>
         <td>{{shiftHandoverData.dailyoperationdescription}}</td>
-        <td>{{shiftHandoverData.dailyoperationstartdate06 | date}}, {{shiftHandoverData.dailyoperationstarttime03}}</td>
-        <td>{{shiftHandoverData.dailyoperationenddate07 | date}}, {{shiftHandoverData.dailyoperationendtime04}}</td>
+        <td>{{shiftHandoverData.dailyoperationstartdate06 | date}} <i>{{shiftHandoverData.dailyoperationstarttime03}}</i></td>
+        <td>{{shiftHandoverData.dailyoperationenddate07 | date}} <i>{{shiftHandoverData.dailyoperationendtime04}}</i></td>
         <td>{{shiftHandoverData.dailyoperationstatus}}</td>
         <td>{{shiftHandoverData.dailyoperationpriority}}</td>
       </tr>
@@ -144,8 +144,8 @@
       </tr>
       <tr *ngFor="let standinginstructions of shiftHandoverData.standing_instruction">
         <td>{{standinginstructions.standingdescription}}</td>
-        <td>{{standinginstructions.standingstartdate08 | date}}, {{standinginstructions.standingstarttime05}}</td>
-        <td>{{standinginstructions.standingenddate09 | date}}, {{standinginstructions.standingendtime06}}</td>
+        <td>{{standinginstructions.standingstartdate08 | date}} <i>{{standinginstructions.standingstarttime05}}</i></td>
+        <td>{{standinginstructions.standingenddate09 | date}} <i>{{standinginstructions.standingendtime06}}</i></td>
         <td>{{standinginstructions.standingstatus}}</td>
         <td>{{standinginstructions.standingpriority}}</td>
       </tr>
@@ -163,8 +163,8 @@
       </tr>
       <tr>
         <td>{{shiftHandoverData.operationcaredescription}}</td>
-        <td>{{shiftHandoverData.operationcarestartdate | date}}, {{shiftHandoverData.operationcarestarttime}}</td>
-        <td>{{shiftHandoverData.operationcareenddate | date}}, {{shiftHandoverData.operationcareendtime}}</td>
+        <td>{{shiftHandoverData.operationcarestartdate | date}} <i>{{shiftHandoverData.operationcarestarttime}}</i></td>
+        <td>{{shiftHandoverData.operationcareenddate | date}} <i>{{shiftHandoverData.operationcareendtime}}</i></td>
         <td>{{shiftHandoverData.operationcarestatus}}</td>
         <td>{{shiftHandoverData.operationcarepriority}}</td>
       </tr>
@@ -185,7 +185,7 @@
         <td>{{operationchecklists.checklistresult}}</td>
         <td>{{operationchecklists.checklistremark}}</td>
         <td>{{operationchecklists.checklistcheckedby}}</td>
-        <td>{{operationchecklists.checklistcheckeddate | date}}, {{operationchecklists.checklistcheckedtime}}</td>
+        <td>{{operationchecklists.checklistcheckeddate | date}} <i>{{operationchecklists.checklistcheckedtime}}</i></td>
       </tr>
     </table>
 
@@ -194,7 +194,7 @@
   <table>
     <tr>
       <th style="width: 10%;">Area</th>
-      <th style="width: 55%;">Description</th>
+      <th style="width: 50%;">Description</th>
       <th style="width: 10%;">Type</th>
       <th style="width: 15%;">Log Date Time</th>
       <th style="width: 10%;">Status</th>
@@ -203,7 +203,7 @@
       <td>{{unitshighlights.unitarea}}</td>
       <td>{{unitshighlights.unitdescription}}</td>
       <td>{{unitshighlights.unittype}}</td>
-      <td>{{unitshighlights.unitlogdate | date}}, {{unitshighlights.unitlogtime}}</td>
+      <td>{{unitshighlights.unitlogdate | date}} <i>{{unitshighlights.unitlogtime}}</i></td>
       <td>{{unitshighlights.unitstatus}}</td>
     </tr>
   </table>
@@ -213,23 +213,23 @@
   <div class="MaintenanceItemDetailsTable">
     <table>
       <tr>
-        <th>Description</th>
-        <th>Tag ID</th>
-        <th>Notification</th>
-        <th>Work Order</th>
-        <th>Planned Start Time</th>
-        <th>Planned End Time</th>
-        <th>Permit</th>
-        <th>Status</th>
-        <th>Priority</th>
+        <th style="width: 50%;">Description</th>
+        <th style="width: 4%;">Tag ID</th>
+        <th style="width: 6%;">Notification</th>
+        <th style="width: 5%;">Work Order</th>
+        <th style="width: 9%;">Planned Start Time</th>
+        <th style="width: 9%;">Planned End Time</th>
+        <th style="width: 5%;">Permit</th>
+        <th style="width: 6%;">Status</th>
+        <th style="width: 4%;">Priority</th>
       </tr>
       <tr *ngFor="let maintenances of shiftHandoverData.maintenance_items">
         <td>{{maintenances.maintenancedescription}}</td>
         <td>{{maintenances.maintenancetagid}}</td>
         <td>{{maintenances.maintenancenotificationno}} <br> {{maintenances.maintenancenotificationstatus}}</td>
         <td>{{maintenances.maintenanceworkoderno}} <br> {{maintenances.maintenanceworkorderstatus}}</td>
-        <td>{{maintenances.maintenanceplanedstartdate | date}}</td>
-        <td>{{maintenances.maintenanceplannedenddate | date}}</td>
+        <td>{{maintenances.maintenanceplanedstartdate | date}} <i>{{maintenances.maintenanceplannedstarttime}}</i></td>
+        <td>{{maintenances.maintenanceplannedenddate | date}} <i>{{maintenances.maintenanceplannedendtime}}</i></td>
         <td>{{maintenances.maintenancepermitnumber}} <br> {{maintenances.maintenancepermitstatus}}</td>
         <td>{{maintenances.maintenancestatus}}</td>
         <td>{{maintenances.maintenancepriority}}</td>
@@ -242,8 +242,8 @@
   <table>
     <tr>
       <th style="width: 50%;">Name</th>
-      <th style="width: 25%;">Sub Role</th>
-      <th style="width: 25%;">Remarks</th>
+      <th style="width: 15%;">Sub Role</th>
+      <th style="width: 35%;">Remarks</th>
     </tr>
     <tr *ngFor="let shiftmannings of shiftHandoverData.shift_mannings">
       <td>{{shiftmannings.shiftmanningname}}</td>
@@ -253,3 +253,4 @@
   </table>
 
 </div>
+<br>

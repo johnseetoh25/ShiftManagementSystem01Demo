@@ -130,8 +130,8 @@
           "maintenanceplannedstarttime": "6:30 PM",
           "maintenanceplannedenddate": "2022-07-12T16:00:00.000Z",
           "maintenanceplannedendtime": "7:35 AM",
-          "maintenancepermitnumber": "",
-          "maintenancepermitstatus": "",
+          "maintenancepermitnumber": "546435534",
+          "maintenancepermitstatus": "In Progress",
           "maintenancestatus": "In Progress",
           "maintenancepriority": "High"
         }
@@ -151,10 +151,16 @@
       "id": 1
     },
     {
+      "incomingapprovelby": "Andy Dominions ",
+      "shiftdate03": "2022-07-07T16:00:00.000Z",
+      "incomingwithcomment": "Xe go to Paris and steals pretty girl ",
       "shiftdate01": "2022-07-04T16:00:00.000Z",
       "shift": "Morning",
       "team": "O",
       "subrole": "gdfggfhgjdgjgdf",
+      "outgoingapprovedby": "Francis ",
+      "shiftdate02": "2022-07-07T16:00:00.000Z",
+      "outgoingwithcomment": "He go to paris",
       "safety_logs": [
         {
           "safetydescription": "hfdhgfdjghjhgj",
