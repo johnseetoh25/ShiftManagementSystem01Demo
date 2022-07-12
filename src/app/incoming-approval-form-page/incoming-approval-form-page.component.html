@@ -45,7 +45,7 @@
         </mat-form-field>
       </form>
       <div [align]=" 'end' ">
-        <button mat-raised-button (click)="submitIncomingApprovalData()" style="background-color:mediumseagreen; color:white;"> Save </button>
+        <button mat-raised-button [disabled]="addIncomingApprovalForm.disabled || doneApproved" (click)="submitIncomingApprovalData()" id="saveSubmitBtn"> Save </button>
       </div>
 
       <div id="outgoingApprovalData">

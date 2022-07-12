@@ -17,6 +17,8 @@ export class IncomingApprovalFormPageComponent implements OnInit {
   addIncomingApprovalForm!: FormGroup;
   shifthandoverList!: any;
 
+  doneApproved = false;
+
   constructor(
     private api: ApiService,
     private route: ActivatedRoute,
@@ -223,18 +225,34 @@ export class IncomingApprovalFormPageComponent implements OnInit {
           this.shiftMannings.push(shiftmanningsForm);
         });
 
+      // lock elements when which form done fill in
+      if (data.incomingapprovelby) {
+        lockElement(this.addIncomingApprovalForm);
+      } else {
+        unlockElement(this.addIncomingApprovalForm);
+      }
+      this.addIncomingApprovalForm.valueChanges.subscribe((data)=>{
+        if (!data.incomingapprovelby) {
+          this.doneApproved = this.addIncomingApprovalForm.valid;
+        } else {
+          this.doneApproved = this.addIncomingApprovalForm.disabled;
+        }
+      });
+
       console.log(this.addIncomingApprovalForm.value);
     });
   }
 
   submitIncomingApprovalData(){
-    this.api.editShiftHandover(this.addIncomingApprovalForm.value, this.id)
-    .subscribe((res)=>{
-      const id = res.id;
-      alert("Your Incoming Approval Successfully");
-    },()=>{
-      alert("Error while adding the record");
-    });
+    if (this.addIncomingApprovalForm.valid) {
+      this.api.editShiftHandover(this.addIncomingApprovalForm.value, this.id)
+      .subscribe((res)=>{
+        const id = res.id;
+        alert("Your Incoming Approval Successfully");
+      },()=>{
+        alert("Error while adding the record");
+      });
+    }
   }
 
   // object array for the sub-data
@@ -270,4 +288,24 @@ export class IncomingApprovalFormPageComponent implements OnInit {
     return this.addIncomingApprovalForm.get('shift_mannings') as FormArray;
   }
 
+}
+
+function lockElement(element: FormControl | FormGroup ) {
+  if (element.enabled) {
+    element.disable({ emitEvent: false });
+
+    if (element instanceof FormControl) {
+      element.reset(null, { emitEvent: false });
+    }
+  }
+}
+
+function unlockElement(element: FormControl | FormGroup) {
+  if (element.disabled) {
+    element.enable({ emitEvent: false });
+
+    if (element instanceof FormControl) {
+      element.reset(null, { emitEvent: false });
+    }
+  }
 }

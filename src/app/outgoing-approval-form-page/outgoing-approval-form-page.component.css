@@ -16,6 +16,15 @@ mat-form-field{
   padding-bottom: 20px;
 }
 
+#saveSubmitBtn{
+  background-color:mediumseagreen;
+  color:white;
+}
+#saveSubmitBtn:disabled{
+  background-color:grey;
+  color:white;
+}
+
 /*Columns in Row CSS*/
 *{
   box-sizing: border-box;

@@ -223,13 +223,16 @@
       "id": 2
     },
     {
-      "outgoingapprovedby": "fdt",
-      "shiftdate02": "2022-07-19T16:00:00.000Z",
-      "outgoingwithcomment": "dgfddf",
+      "incomingapprovelby": "Harry Potter",
+      "shiftdate03": "2022-07-11T16:00:00.000Z",
+      "incomingwithcomment": "dgsdgfdfhghgfh",
       "shiftdate01": "2022-07-05T16:00:00.000Z",
       "shift": "Evening",
       "team": "V",
       "subrole": "dshghgfhghggfhjghgcvbcxhgfghgfhbfghg xbghg",
+      "outgoingapprovedby": "fdt",
+      "shiftdate02": "2022-07-19T16:00:00.000Z",
+      "outgoingwithcomment": "dgfddf",
       "safety_logs": [
         {
           "safetydescription": "",
@@ -358,13 +361,16 @@
       "id": 4
     },
     {
-      "incomingapprovelby": "Robert",
-      "shiftdate03": "2022-07-11T16:00:00.000Z",
-      "incomingwithcomment": "dgfgfdgd",
+      "outgoingapprovedby": "Mohn Blackwoman Binti Yellowman",
+      "shiftdate02": "2022-07-11T16:00:00.000Z",
+      "outgoingwithcomment": "zsdgdsgter65437y664e5",
       "shiftdate01": "2022-07-06T16:00:00.000Z",
       "shift": "morning",
       "team": "D",
       "subrole": "dshswsyhtyhfdhgdgjdfg",
+      "incomingapprovelby": "Robert",
+      "shiftdate03": "2022-07-11T16:00:00.000Z",
+      "incomingwithcomment": "dgfgfdgd",
       "safety_logs": [],
       "override_logs": [],
       "permit_to_works": [],
@@ -376,10 +382,16 @@
       "id": 5
     },
     {
+      "outgoingapprovedby": "Roberts",
+      "shiftdate02": "2022-07-11T16:00:00.000Z",
+      "outgoingwithcomment": "zsfdfgdsfds",
       "shiftdate01": "2022-07-06T16:00:00.000Z",
       "shift": "Weekend ",
       "team": "R",
       "subrole": "sdhfdghtdy67y54yrgytfdgh",
+      "incomingapprovelby": "Yvonne",
+      "shiftdate03": "2022-07-11T16:00:00.000Z",
+      "incomingwithcomment": "sdfgfgfgdg",
       "safety_logs": [
         {
           "safetydescription": "fhgfhgfhgfhfhfsfdg",
@@ -479,28 +491,16 @@
       "id": 6
     },
     {
-      "shiftdate01": "2022-06-29T16:00:00.000Z",
-      "shift": "Weekend Morning",
-      "team": "L",
-      "subrole": "gnxfnxgjfxjhg",
-      "safety_logs": [],
-      "override_logs": [],
-      "permit_to_works": [],
-      "standing_instruction": [],
-      "operation_care_checklist": [],
-      "highlight_operational_logs": [],
-      "maintenance_items": [],
-      "shift_mannings": [],
-      "id": 7
-    },
-    {
-      "shiftdate01": "2022-07-07T16:00:00.000Z",
-      "shift": "Sunday",
+      "incomingapprovelby": "Harry",
+      "shiftdate03": "2022-07-11T16:00:00.000Z",
+      "incomingwithcomment": "hgfhgfhgfh",
+      "shiftdate01": "2022-07-11T16:00:00.000Z",
+      "shift": "Evening",
       "team": "E",
-      "subrole": "GDFDG",
+      "subrole": "rrghthyhhhgh",
       "safety_logs": [
         {
-          "safetydescription": "1",
+          "safetydescription": "gfdhgfg",
           "safetylogdate04": "",
           "safetylogtime01": "",
           "safetystatus": ""
@@ -508,14 +508,113 @@
       ],
       "override_logs": [
         {
-          "overridedescription": "2.1",
+          "overridedescription": "gfdjhgjhgj",
           "overridelogdate05": "",
           "overridelogtime02": "",
           "overridestatus": "",
           "overridetagid": ""
-        },
+        }
+      ],
+      "permit_to_works": [
         {
-          "overridedescription": "2.2",
+          "permitdescription": "gfdhjfhjghjgjh",
+          "permittype": "",
+          "permitid": "",
+          "permitstatus": "",
+          "permitpriority": ""
+        }
+      ],
+      "dailyoperationdescription": "gfdghgfhgh",
+      "dailyoperationstartdate06": "",
+      "dailyoperationstarttime03": "",
+      "dailyoperationenddate07": "",
+      "dailyoperationendtime04": "",
+      "dailyoperationstatus": "",
+      "dailyoperationpriority": "",
+      "standing_instruction": [
+        {
+          "standingdescription": "",
+          "standingstartdate08": "",
+          "standingstarttime05": "",
+          "standingenddate09": "",
+          "standingendtime06": "",
+          "standingstatus": "",
+          "standingpriority": ""
+        }
+      ],
+      "operationcaredescription": "",
+      "operationcarestartdate": "",
+      "operationcarestarttime": "",
+      "operationcareenddate": "",
+      "operationcareendtime": "",
+      "operationcarestatus": "",
+      "operationcarepriority": "",
+      "operation_care_checklist": [
+        {
+          "checklistdescriptions": "",
+          "checklistresult": "",
+          "checklistremark": "",
+          "checklistcheckedby": "",
+          "checklistcheckeddate": "",
+          "checklistcheckedtime": ""
+        }
+      ],
+      "highlight_operational_logs": [
+        {
+          "unitarea": "",
+          "unitdescription": "",
+          "unittype": "",
+          "unitlogdate": "",
+          "unitlogtime": "",
+          "unitstatus": ""
+        }
+      ],
+      "maintenance_items": [
+        {
+          "maintenancedescription": "",
+          "maintenancetagid": "",
+          "maintenancenotificationno": "",
+          "maintenancenotificationstatus": "",
+          "maintenanceworkoderno": "",
+          "maintenanceworkorderstatus": "",
+          "maintenanceplanedstartdate": "",
+          "maintenanceplannedstarttime": "",
+          "maintenanceplannedenddate": "",
+          "maintenanceplannedendtime": "",
+          "maintenancepermitnumber": "",
+          "maintenancepermitstatus": "",
+          "maintenancestatus": "",
+          "maintenancepriority": ""
+        }
+      ],
+      "shift_mannings": [
+        {
+          "shiftmanningname": "",
+          "shiftmanningsubrole": "",
+          "shiftmanningremarks": ""
+        }
+      ],
+      "id": 7
+    },
+    {
+      "incomingapprovelby": "Amy",
+      "shiftdate03": "2022-07-11T16:00:00.000Z",
+      "incomingwithcomment": "sdgfdfgfgdf",
+      "shiftdate01": "2022-07-11T16:00:00.000Z",
+      "shift": "Evenning",
+      "team": "E",
+      "subrole": "gdhdfdhdgfh",
+      "safety_logs": [
+        {
+          "safetydescription": "",
+          "safetylogdate04": "",
+          "safetylogtime01": "",
+          "safetystatus": ""
+        }
+      ],
+      "override_logs": [
+        {
+          "overridedescription": "",
           "overridelogdate05": "",
           "overridelogtime02": "",
           "overridestatus": "",
@@ -531,7 +630,7 @@
           "permitpriority": ""
         }
       ],
-      "dailyoperationdescription": "3",
+      "dailyoperationdescription": "",
       "dailyoperationstartdate06": "",
       "dailyoperationstarttime03": "",
       "dailyoperationenddate07": "",
@@ -602,6 +701,318 @@
         }
       ],
       "id": 8
+    },
+    {
+      "incomingapprovelby": "Golden",
+      "shiftdate03": "2022-07-12T16:00:00.000Z",
+      "incomingwithcomment": "dffsdfds",
+      "shiftdate01": "2022-07-11T16:00:00.000Z",
+      "shift": "Morning",
+      "team": "R",
+      "subrole": "fdsghfghgfhgfhg",
+      "safety_logs": [
+        {
+          "safetydescription": "",
+          "safetylogdate04": "",
+          "safetylogtime01": "",
+          "safetystatus": ""
+        }
+      ],
+      "override_logs": [
+        {
+          "overridedescription": "",
+          "overridelogdate05": "",
+          "overridelogtime02": "",
+          "overridestatus": "",
+          "overridetagid": ""
+        }
+      ],
+      "permit_to_works": [
+        {
+          "permitdescription": "",
+          "permittype": "",
+          "permitid": "",
+          "permitstatus": "",
+          "permitpriority": ""
+        }
+      ],
+      "dailyoperationdescription": "",
+      "dailyoperationstartdate06": "",
+      "dailyoperationstarttime03": "",
+      "dailyoperationenddate07": "",
+      "dailyoperationendtime04": "",
+      "dailyoperationstatus": "",
+      "dailyoperationpriority": "",
+      "standing_instruction": [
+        {
+          "standingdescription": "",
+          "standingstartdate08": "",
+          "standingstarttime05": "",
+          "standingenddate09": "",
+          "standingendtime06": "",
+          "standingstatus": "",
+          "standingpriority": ""
+        }
+      ],
+      "operationcaredescription": "",
+      "operationcarestartdate": "",
+      "operationcarestarttime": "",
+      "operationcareenddate": "",
+      "operationcareendtime": "",
+      "operationcarestatus": "",
+      "operationcarepriority": "",
+      "operation_care_checklist": [
+        {
+          "checklistdescriptions": "",
+          "checklistresult": "",
+          "checklistremark": "",
+          "checklistcheckedby": "",
+          "checklistcheckeddate": "",
+          "checklistcheckedtime": ""
+        }
+      ],
+      "highlight_operational_logs": [
+        {
+          "unitarea": "",
+          "unitdescription": "",
+          "unittype": "",
+          "unitlogdate": "",
+          "unitlogtime": "",
+          "unitstatus": ""
+        }
+      ],
+      "maintenance_items": [
+        {
+          "maintenancedescription": "",
+          "maintenancetagid": "",
+          "maintenancenotificationno": "",
+          "maintenancenotificationstatus": "",
+          "maintenanceworkoderno": "",
+          "maintenanceworkorderstatus": "",
+          "maintenanceplanedstartdate": "",
+          "maintenanceplannedstarttime": "",
+          "maintenanceplannedenddate": "",
+          "maintenanceplannedendtime": "",
+          "maintenancepermitnumber": "",
+          "maintenancepermitstatus": "",
+          "maintenancestatus": "",
+          "maintenancepriority": ""
+        }
+      ],
+      "shift_mannings": [
+        {
+          "shiftmanningname": "",
+          "shiftmanningsubrole": "",
+          "shiftmanningremarks": ""
+        }
+      ],
+      "id": 9
+    },
+    {
+      "shiftdate01": "2022-07-11T16:00:00.000Z",
+      "shift": "Morning",
+      "team": "T",
+      "subrole": "rtegtgfdgdfg",
+      "safety_logs": [
+        {
+          "safetydescription": "",
+          "safetylogdate04": "",
+          "safetylogtime01": "",
+          "safetystatus": ""
+        }
+      ],
+      "override_logs": [
+        {
+          "overridedescription": "",
+          "overridelogdate05": "",
+          "overridelogtime02": "",
+          "overridestatus": "",
+          "overridetagid": ""
+        }
+      ],
+      "permit_to_works": [
+        {
+          "permitdescription": "",
+          "permittype": "",
+          "permitid": "",
+          "permitstatus": "",
+          "permitpriority": ""
+        }
+      ],
+      "dailyoperationdescription": "",
+      "dailyoperationstartdate06": "",
+      "dailyoperationstarttime03": "",
+      "dailyoperationenddate07": "",
+      "dailyoperationendtime04": "",
+      "dailyoperationstatus": "",
+      "dailyoperationpriority": "",
+      "standing_instruction": [
+        {
+          "standingdescription": "",
+          "standingstartdate08": "",
+          "standingstarttime05": "",
+          "standingenddate09": "",
+          "standingendtime06": "",
+          "standingstatus": "",
+          "standingpriority": ""
+        }
+      ],
+      "operationcaredescription": "",
+      "operationcarestartdate": "",
+      "operationcarestarttime": "",
+      "operationcareenddate": "",
+      "operationcareendtime": "",
+      "operationcarestatus": "",
+      "operationcarepriority": "",
+      "operation_care_checklist": [
+        {
+          "checklistdescriptions": "",
+          "checklistresult": "",
+          "checklistremark": "",
+          "checklistcheckedby": "",
+          "checklistcheckeddate": "",
+          "checklistcheckedtime": ""
+        }
+      ],
+      "highlight_operational_logs": [
+        {
+          "unitarea": "",
+          "unitdescription": "",
+          "unittype": "",
+          "unitlogdate": "",
+          "unitlogtime": "",
+          "unitstatus": ""
+        }
+      ],
+      "maintenance_items": [
+        {
+          "maintenancedescription": "",
+          "maintenancetagid": "",
+          "maintenancenotificationno": "",
+          "maintenancenotificationstatus": "",
+          "maintenanceworkoderno": "",
+          "maintenanceworkorderstatus": "",
+          "maintenanceplanedstartdate": "",
+          "maintenanceplannedstarttime": "",
+          "maintenanceplannedenddate": "",
+          "maintenanceplannedendtime": "",
+          "maintenancepermitnumber": "",
+          "maintenancepermitstatus": "",
+          "maintenancestatus": "",
+          "maintenancepriority": ""
+        }
+      ],
+      "shift_mannings": [
+        {
+          "shiftmanningname": "",
+          "shiftmanningsubrole": "",
+          "shiftmanningremarks": ""
+        }
+      ],
+      "id": 10
+    },
+    {
+      "shiftdate01": "2022-07-11T16:00:00.000Z",
+      "shift": "Afternoon",
+      "team": "Y",
+      "subrole": "FDSHFSHFGDgfsdgdsgf",
+      "safety_logs": [
+        {
+          "safetydescription": "",
+          "safetylogdate04": "",
+          "safetylogtime01": "",
+          "safetystatus": ""
+        }
+      ],
+      "override_logs": [
+        {
+          "overridedescription": "",
+          "overridelogdate05": "",
+          "overridelogtime02": "",
+          "overridestatus": "",
+          "overridetagid": ""
+        }
+      ],
+      "permit_to_works": [
+        {
+          "permitdescription": "",
+          "permittype": "",
+          "permitid": "",
+          "permitstatus": "",
+          "permitpriority": ""
+        }
+      ],
+      "dailyoperationdescription": "",
+      "dailyoperationstartdate06": "",
+      "dailyoperationstarttime03": "",
+      "dailyoperationenddate07": "",
+      "dailyoperationendtime04": "",
+      "dailyoperationstatus": "",
+      "dailyoperationpriority": "",
+      "standing_instruction": [
+        {
+          "standingdescription": "",
+          "standingstartdate08": "",
+          "standingstarttime05": "",
+          "standingenddate09": "",
+          "standingendtime06": "",
+          "standingstatus": "",
+          "standingpriority": ""
+        }
+      ],
+      "operationcaredescription": "",
+      "operationcarestartdate": "",
+      "operationcarestarttime": "",
+      "operationcareenddate": "",
+      "operationcareendtime": "",
+      "operationcarestatus": "",
+      "operationcarepriority": "",
+      "operation_care_checklist": [
+        {
+          "checklistdescriptions": "",
+          "checklistresult": "",
+          "checklistremark": "",
+          "checklistcheckedby": "",
+          "checklistcheckeddate": "",
+          "checklistcheckedtime": ""
+        }
+      ],
+      "highlight_operational_logs": [
+        {
+          "unitarea": "",
+          "unitdescription": "",
+          "unittype": "",
+          "unitlogdate": "",
+          "unitlogtime": "",
+          "unitstatus": ""
+        }
+      ],
+      "maintenance_items": [
+        {
+          "maintenancedescription": "",
+          "maintenancetagid": "",
+          "maintenancenotificationno": "",
+          "maintenancenotificationstatus": "",
+          "maintenanceworkoderno": "",
+          "maintenanceworkorderstatus": "",
+          "maintenanceplanedstartdate": "",
+          "maintenanceplannedstarttime": "",
+          "maintenanceplannedenddate": "",
+          "maintenanceplannedendtime": "",
+          "maintenancepermitnumber": "",
+          "maintenancepermitstatus": "",
+          "maintenancestatus": "",
+          "maintenancepriority": ""
+        }
+      ],
+      "shift_mannings": [
+        {
+          "shiftmanningname": "",
+          "shiftmanningsubrole": "",
+          "shiftmanningremarks": ""
+        }
+      ],
+      "id": 11
     }
   ],
   "comments": [

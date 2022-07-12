@@ -17,6 +17,8 @@ export class OutgoingApprovalFormPageComponent implements OnInit {
   addOutgoingApprovalForm!: FormGroup;
   shifthandoverList!: any;
 
+  doneApproved = false;
+
   constructor(
     private api: ApiService,
     private route: ActivatedRoute,
@@ -49,8 +51,6 @@ export class OutgoingApprovalFormPageComponent implements OnInit {
       incomingapprovelby: new FormControl(''),
       shiftdate03: new FormControl(''),
       incomingwithcomment: new FormControl(''),
-
-
 
         //Health Safety Security Enviroment
         safety_logs: this.formBuilder.array([]),
@@ -225,6 +225,20 @@ export class OutgoingApprovalFormPageComponent implements OnInit {
           this.shiftMannings.push(shiftmanningsForm);
         });
 
+      // lock elements when which form done fill in
+      if (data.outgoingapprovedby) {
+        lockElement(this.addOutgoingApprovalForm);
+      } else {
+        unlockElement(this.addOutgoingApprovalForm);
+      }
+      this.addOutgoingApprovalForm.valueChanges.subscribe((data)=>{
+        if (!data.outgoingapprovedby) {
+          this.doneApproved = this.addOutgoingApprovalForm.valid;
+        } else {
+          this.doneApproved = this.addOutgoingApprovalForm.disabled;
+        }
+      });
+
       console.log(this.addOutgoingApprovalForm.value);
     });
   }
@@ -274,4 +288,24 @@ export class OutgoingApprovalFormPageComponent implements OnInit {
     return this.addOutgoingApprovalForm.get('shift_mannings') as FormArray;
   }
 
+}
+
+function lockElement(element: FormControl | FormGroup ) {
+  if (element.enabled) {
+    element.disable({ emitEvent: false });
+
+    if (element instanceof FormControl) {
+      element.reset(null, { emitEvent: false });
+    }
+  }
+}
+
+function unlockElement(element: FormControl | FormGroup) {
+  if (element.disabled) {
+    element.enable({ emitEvent: false });
+
+    if (element instanceof FormControl) {
+      element.reset(null, { emitEvent: false });
+    }
+  }
 }

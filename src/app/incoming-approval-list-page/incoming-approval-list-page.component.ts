@@ -37,7 +37,7 @@ export class IncomingApprovalListPageComponent implements OnInit {
     });
   }
 
-  openIncomingApprovelForm(row: any){
+  openIncomingApprovalForm(row: any){
     this.router.navigate(['incoming-approval-form-page', row]);
   }
 
