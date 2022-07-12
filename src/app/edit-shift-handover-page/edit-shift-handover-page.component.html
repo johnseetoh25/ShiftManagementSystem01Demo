@@ -124,11 +124,11 @@
             </mat-form-field>
           </td>
           <td [align]=" 'center' ">
-            <button mat-icon-button id="deleteIconRowBtn" (click)="deleteSafetyRow(safetylogsIndex)"><mat-icon>delete</mat-icon></button>
+            <button mat-icon-button [disabled]="shifthandoverForm.disabled || doneApprovel" id="deleteIconRowBtn" (click)="deleteSafetyRow(safetylogsIndex)"><mat-icon>delete</mat-icon></button>
           </td>
         </tr>
         <tr [align]=" 'right' ">
-          <td colspan="4"><button mat-flat-button id="addFormsRowBtn" (click)="addSafetyRow()"><mat-icon>add</mat-icon>Add Row</button></td>
+          <td colspan="4"><button mat-flat-button [disabled]="shifthandoverForm.disabled || doneApprovel" id="addFormsRowBtn" (click)="addSafetyRow()"><mat-icon>add</mat-icon>Add Row</button></td>
         </tr>
       </table>
     </div>
@@ -184,11 +184,11 @@
             </mat-form-field>
           </td>
           <td [align]=" 'center' ">
-            <button mat-icon-button id="deleteIconRowBtn" (click)="deleteOverrideRow(overridelogIndex)"><mat-icon>delete</mat-icon></button>
+            <button mat-icon-button [disabled]="shifthandoverForm.disabled || doneApprovel" id="deleteIconRowBtn" (click)="deleteOverrideRow(overridelogIndex)"><mat-icon>delete</mat-icon></button>
           </td>
         </tr>
         <tr [align]=" 'right' ">
-          <td colspan="6"><button mat-flat-button id="addFormsRowBtn" (click)="addOverrideRow()"><mat-icon>add</mat-icon>Add Row</button></td>
+          <td colspan="6"><button mat-flat-button [disabled]="shifthandoverForm.disabled || doneApprovel" id="addFormsRowBtn" (click)="addOverrideRow()"><mat-icon>add</mat-icon>Add Row</button></td>
         </tr>
       </table>
     </div>
@@ -233,11 +233,11 @@
             </mat-form-field>
           </td>
           <td [align]=" 'center' ">
-            <button mat-icon-button id="deleteIconRowBtn" (click)="deletePermitRow(permittoworkIndex)"><mat-icon>delete</mat-icon></button>
+            <button mat-icon-button [disabled]="shifthandoverForm.disabled || doneApprovel" id="deleteIconRowBtn" (click)="deletePermitRow(permittoworkIndex)"><mat-icon>delete</mat-icon></button>
           </td>
         </tr>
         <tr [align]=" 'right' ">
-          <td colspan="6"><button mat-flat-button id="addFormsRowBtn" (click)="addPermitRow()"><mat-icon>add</mat-icon>Add Row</button></td>
+          <td colspan="6"><button mat-flat-button [disabled]="shifthandoverForm.disabled || doneApprovel" id="addFormsRowBtn" (click)="addPermitRow()"><mat-icon>add</mat-icon>Add Row</button></td>
         </tr>
       </table>
     </div>
@@ -413,7 +413,7 @@
           </td>
         </tr>
         <tr [align]=" 'right' ">
-          <td colspan="6"><button mat-flat-button id="addFormsRowBtn" (click)="addStandingInstructionRow()"><mat-icon>add</mat-icon>Add Row</button></td>
+          <td colspan="6"><button mat-flat-button [disabled]="shifthandoverForm.disabled || doneApprovel" id="addFormsRowBtn" (click)="addStandingInstructionRow()"><mat-icon>add</mat-icon>Add Row</button></td>
         </tr>
       </table>
     </div>
@@ -544,11 +544,11 @@
             </mat-form-field>
           </td>
           <td [align]=" 'center' ">
-            <button mat-icon-button id="deleteIconRowBtn" (click)="deleteOperationCareChecklistRow(checklistIndex)"><mat-icon>delete</mat-icon></button>
+            <button mat-icon-button [disabled]="shifthandoverForm.disabled || doneApprovel" id="deleteIconRowBtn" (click)="deleteOperationCareChecklistRow(checklistIndex)"><mat-icon>delete</mat-icon></button>
           </td>
         </tr>
         <tr [align]=" 'right' ">
-          <td colspan="6"><button mat-flat-button id="addFormsRowBtn" (click)="addOperationCareChecklistRow()"><mat-icon>add</mat-icon>Add Row</button></td>
+          <td colspan="6"><button mat-flat-button [disabled]="shifthandoverForm.disabled || doneApprovel" id="addFormsRowBtn" (click)="addOperationCareChecklistRow()"><mat-icon>add</mat-icon>Add Row</button></td>
         </tr>
       </table>
     </div>
@@ -619,11 +619,11 @@
             </mat-form-field>
           </td>
           <td [align]=" 'center' ">
-            <button mat-icon-button id="deleteIconRowBtn" (click)="deleteHighlightsOperationalLogRow(highlightIndex)"><mat-icon>delete</mat-icon></button>
+            <button mat-icon-button [disabled]="shifthandoverForm.disabled || doneApprovel" id="deleteIconRowBtn" (click)="deleteHighlightsOperationalLogRow(highlightIndex)"><mat-icon>delete</mat-icon></button>
           </td>
         </tr>
         <tr [align]=" 'right' ">
-          <td colspan="6"><button mat-flat-button id="addFormsRowBtn" (click)="addHighlightsOperationalLogRow()"><mat-icon>add</mat-icon>Add Row</button></td>
+          <td colspan="6"><button mat-flat-button [disabled]="shifthandoverForm.disabled || doneApprovel" id="addFormsRowBtn" (click)="addHighlightsOperationalLogRow()"><mat-icon>add</mat-icon>Add Row</button></td>
         </tr>
       </table>
     </div>
@@ -742,11 +742,11 @@
           </mat-form-field>
         </td>
         <td [align]=" 'center' ">
-          <button mat-icon-button id="deleteIconRowBtn" (click)="deleteMaintenanceItemRow(maintenanceIndex)"><mat-icon>delete</mat-icon></button>
+          <button mat-icon-button [disabled]="shifthandoverForm.disabled || doneApprovel" id="deleteIconRowBtn" (click)="deleteMaintenanceItemRow(maintenanceIndex)"><mat-icon>delete</mat-icon></button>
         </td>
       </tr>
       <tr [align]=" 'right' ">
-        <td colspan="13"><button mat-flat-button id="addFormsRowBtn" (click)="addMaintenanceItemRow()"><mat-icon>add</mat-icon>Add Row</button></td></tr>
+        <td colspan="13"><button mat-flat-button [disabled]="shifthandoverForm.disabled || doneApprovel" id="addFormsRowBtn" (click)="addMaintenanceItemRow()"><mat-icon>add</mat-icon>Add Row</button></td></tr>
     </table>
   </div>
 
@@ -783,10 +783,10 @@
               <textarea matInput formControlName="shiftmanningremarks"></textarea>
             </mat-form-field>
           </td>
-          <td [align]=" 'center' "><button mat-icon-button id="deleteIconRowBtn" (click)="deleteShiftManningRow(shiftmanningIndex)"><mat-icon>delete</mat-icon></button></td>
+          <td [align]=" 'center' "><button mat-icon-button [disabled]="shifthandoverForm.disabled || doneApprovel" id="deleteIconRowBtn" (click)="deleteShiftManningRow(shiftmanningIndex)"><mat-icon>delete</mat-icon></button></td>
         </tr>
         <tr [align]=" 'right' ">
-          <td colspan="4"><button mat-flat-button id="addFormsRowBtn" (click)="addShiftManningRow()"><mat-icon>add</mat-icon>Add Row</button></td>
+          <td colspan="4"><button mat-flat-button [disabled]="shifthandoverForm.disabled || doneApprovel" id="addFormsRowBtn" (click)="addShiftManningRow()"><mat-icon>add</mat-icon>Add Row</button></td>
         </tr>
       </table>
     </div>
@@ -797,5 +797,7 @@
 <br>
 
 <div [align]=" 'end' ">
-  <button mat-raised-button (click)="submitEditedShiftHandoverData()" style="background-color:mediumseagreen; color:white;" > Save </button>
+  <button mat-raised-button [disabled]="shifthandoverForm.disabled || doneApprovel" id="saveSubmitBtn" (click)="submitEditedShiftHandoverData()"> Save </button>
 </div>
+
+

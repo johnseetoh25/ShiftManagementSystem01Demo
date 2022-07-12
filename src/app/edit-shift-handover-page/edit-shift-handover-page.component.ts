@@ -16,7 +16,7 @@ export class EditShiftHandoverPageComponent implements OnInit {
   id:any;
   shiftHandoverData!: ShiftHandoverModels;
 
-  disabled: boolean = true;
+  doneApprovel = false;
 
   constructor(
     private formBuilder : FormBuilder,
@@ -207,6 +207,21 @@ export class EditShiftHandoverPageComponent implements OnInit {
           shiftmanningremarks: shiftManningsData.shiftmanningremarks,
         });
         this.shiftMannings.push(shiftmanningsForm);
+      });
+
+      if(!data.outgoingapprovedby && !data.incomingapprovelby){
+        unlockElement(this.shifthandoverForm);
+      }
+      else{
+        lockElement(this.shifthandoverForm);
+      }
+
+      this.shifthandoverForm.valueChanges.subscribe((data)=>{
+        if (!data.outgoingapprovedby) {
+          this.doneApprovel = this.shifthandoverForm.disabled;
+        } else {
+          this.doneApprovel = this.shifthandoverForm.valid;
+        }
       });
 
       console.log(this.shifthandoverForm.value);
@@ -421,4 +436,24 @@ deleteShiftManningRow(x:number){
   }
 }
 
+}
+
+function lockElement(element: FormControl | FormGroup ) {
+  if (element.enabled) {
+    element.disable({ emitEvent: false });
+
+    if (element instanceof FormControl) {
+      element.reset(null, { emitEvent: false });
+    }
+  }
+}
+
+function unlockElement(element: FormControl | FormGroup) {
+  if (element.disabled) {
+    element.enable({ emitEvent: false });
+
+    if (element instanceof FormControl) {
+      element.reset(null, { emitEvent: false });
+    }
+  }
 }

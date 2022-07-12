@@ -6,11 +6,28 @@ mat-form-field{
 #deleteIconRowBtn{
   color: salmon;
 }
+#deleteIconRowBtn:disabled{
+  color: grey;
+}
 
 #addFormsRowBtn{
   background-color: skyblue;
   color:white;
   width: 10rem;
+}
+#addFormsRowBtn:disabled{
+  background-color: grey;
+  color:white;
+  width: 10rem;
+}
+
+#saveSubmitBtn{
+  background-color:mediumseagreen;
+  color:white;
+}
+#saveSubmitBtn:disabled{
+  background-color:grey;
+  color:white;
 }
 
 /*Columns in Row CSS*/
