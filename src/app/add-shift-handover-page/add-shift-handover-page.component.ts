@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ShiftHandoverModels } from '../models/shift-handover-models';
 import { ApiService } from '../services/api.service';
 
 @Component({
@@ -147,13 +148,10 @@ export class AddShiftHandoverPageComponent implements OnInit {
   addShiftHandover(){
     if (this.shifthandoverForm.valid) {
       this.api.postShiftHandover(this.shifthandoverForm.value)
-      .subscribe({
-        next:(res)=>{
-          alert("Shift Handover Data added successfully")
-        },
-        error:()=>{
-          alert("Error while adding the Shift Handover data")
-        }
+      .subscribe((data: ShiftHandoverModels)=>{
+        alert("Shift Handover Data added successfully");
+      },()=>{
+        alert("Error while adding the Shift Handover data");
       })
     }
   }
