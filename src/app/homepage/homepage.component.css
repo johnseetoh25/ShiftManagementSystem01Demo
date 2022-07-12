@@ -13,3 +13,14 @@ button{
   color: white;
   background-color: #65318e;
 }
+
+.col {
+  float: left;
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

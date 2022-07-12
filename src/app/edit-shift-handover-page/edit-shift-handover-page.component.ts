@@ -74,14 +74,6 @@ export class EditShiftHandoverPageComponent implements OnInit {
 
     });
 
-    // disable the form field for the special elements
-    //this.shifthandoverForm.get("outgoingapprovedby")!.disable();
-    //this.shifthandoverForm.get("shiftdate02")?.disable();
-    //this.shifthandoverForm.get("outgoingwithcomment")?.disable();
-    //this.shifthandoverForm.get("incomingapprovelby")?.disable();
-    //this.shifthandoverForm.get("shiftdate03")?.disable();
-    //this.shifthandoverForm.get("incomingwithcomment")?.disable();
-
   }
 
   getShiftHandoverByID(id: any){
@@ -90,7 +82,7 @@ export class EditShiftHandoverPageComponent implements OnInit {
       this.id = data.id;
       this.shifthandoverList = data;
 
-      this.shifthandoverForm.patchValue({
+      this.shifthandoverForm.patchValue({ // patch value = refresh value, update value
         shiftdate01: data.shiftdate01,
         shift: data.shift,
         team: data.team,
@@ -119,7 +111,7 @@ export class EditShiftHandoverPageComponent implements OnInit {
         operationcarepriority: data.operationcarepriority,
       });
 
-      this.shifthandoverList.safety_logs.map((safetyLogData: any)=>{
+      this.shifthandoverList.safety_logs.map((safetyLogData: any)=>{ // if have 2 rows added in table, then refersh back with 2 row for original value/// refresh and update rows
         const safetylogsForm = this.formBuilder.group({
           safetydescription: safetyLogData.safetydescription,
           safetylogdate04: safetyLogData.safetylogdate04,

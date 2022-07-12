@@ -43,8 +43,8 @@ export interface ShiftHandoverModels {
   // Maintenance Items
   maintenance_items: MaintenanceItems[];
 
-   // Shift Manning
-   shift_mannings: ShiftMannings[];
+  // Shift Manning
+  shift_mannings: ShiftMannings[];
 }
 
 export interface SafetyLogs {
