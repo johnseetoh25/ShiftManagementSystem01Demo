@@ -1,19 +1,18 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
-import { ApiService } from '../services/api.service';
 
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { ApiService } from '../services/api.service';
 
 @Component({
-  selector: 'app-outgoing-approval-list-page',
-  templateUrl: './outgoing-approval-list-page.component.html',
-  styleUrls: ['./outgoing-approval-list-page.component.css']
+  selector: 'app-shift-managements-table',
+  templateUrl: './shift-managements-table.component.html',
+  styleUrls: ['./shift-managements-table.component.css']
 })
-export class OutgoingApprovalListPageComponent implements OnInit {
+export class ShiftManagementsTableComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'date', 'shift', 'team', 'outgoing status', 'action'];
+  displayedColumns: string[] = ['id', 'date', 'shift', 'team', 'status'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -21,8 +20,6 @@ export class OutgoingApprovalListPageComponent implements OnInit {
 
   constructor(
     private api : ApiService,
-    private router : Router,
-
   ) { }
 
   ngOnInit(): void {
@@ -38,14 +35,10 @@ export class OutgoingApprovalListPageComponent implements OnInit {
       this.sort.active = sortState.active;
       this.sort.direction = sortState.direction;
       this.sort.sortChange.emit(sortState);
-      
+
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
-  }
-
-  openOutgoingApprovelForm(row: any){
-    this.router.navigate(['outgoing-approval-form-page', row]);
   }
 
   applyFilter(event: Event) {

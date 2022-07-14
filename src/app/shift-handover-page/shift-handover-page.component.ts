@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { ApiService } from '../services/api.service';
 
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
@@ -13,7 +13,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class ShiftHandoverPageComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'date', 'shift', 'team', 'status', 'action'];
+  displayedColumns: string[] = ['id', 'date', 'shift', 'team', 'approval', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -31,7 +31,13 @@ export class ShiftHandoverPageComponent implements OnInit {
   getAllData(){
     this.api.getShiftHandover()
     .subscribe(data=>{
+      const sortState: Sort = {active: 'id', direction: 'desc'};
       this.dataSource = new MatTableDataSource(data);
+      
+      this.sort.active = sortState.active;
+      this.sort.direction = sortState.direction;
+      this.sort.sortChange.emit(sortState);
+
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });

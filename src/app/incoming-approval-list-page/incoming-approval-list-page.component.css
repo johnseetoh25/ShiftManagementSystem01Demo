@@ -2,6 +2,10 @@ table {
   width: 100%;
 }
 
+th.mat-header-cell, td.mat-cell{
+  padding: 0.5rem;
+}
+
 .mat-form-field {
   font-size: 14px;
   width: 100%;
@@ -11,4 +15,8 @@ table {
   background-color: #f2a0a1;
   color: white;
   margin: 5px;
+}
+
+.table-container{
+  overflow: auto;
 }

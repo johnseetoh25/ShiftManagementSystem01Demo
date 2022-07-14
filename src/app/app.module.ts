@@ -56,6 +56,7 @@ import { OutgoingApprovalListPageComponent } from './outgoing-approval-list-page
 import { OutgoingApprovalFormPageComponent } from './outgoing-approval-form-page/outgoing-approval-form-page.component';
 import { IncomingApprovalListPageComponent } from './incoming-approval-list-page/incoming-approval-list-page.component';
 import { IncomingApprovalFormPageComponent } from './incoming-approval-form-page/incoming-approval-form-page.component';
+import { ShiftManagementsTableComponent } from './shift-managements-table/shift-managements-table.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { IncomingApprovalFormPageComponent } from './incoming-approval-form-page
     OutgoingApprovalFormPageComponent,
     IncomingApprovalListPageComponent,
     IncomingApprovalFormPageComponent,
+    ShiftManagementsTableComponent,
 
 
   ],

@@ -2,6 +2,11 @@ table {
   width: 100%;
 }
 
+th.mat-header-cell, td.mat-cell{
+  text-align: center;
+  padding: 0.5rem;
+}
+
 .mat-form-field {
   font-size: 14px;
   width: 100%;
@@ -10,12 +15,28 @@ table {
 #editShiftHandoverButton{
   background-color: #89c3eb;
   color: white;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 1em;
+  padding-right: 1em;
   margin: 5px;
 }
 
 #addShiftHandoverButton{
   background-color:#eb6ea5;
   color: white;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.container-fluid{
+  margin: 9px;
+}
+
+.table-container{
+  overflow: auto;
+}
+
+.mat-toolbar{
+  padding: 0px;
 }

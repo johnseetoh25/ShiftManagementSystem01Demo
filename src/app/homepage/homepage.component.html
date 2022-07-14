@@ -3,8 +3,8 @@
     <h2>Operation Shift Handover</h2>
     <br>
     <div [align]=" 'end' ">
-      <button mat-flat-button [routerLink]="['/shift-handover-page']" style="margin-right: 10px;">View Shift Handover</button>
-      <button mat-flat-button [routerLink]="['/add-shift-handover-page']">Add Shift Handover</button>
+      <button mat-flat-button [routerLink]="['/shift-handover-page']" style="margin: 5px;">View Shift Handover</button>
+      <button mat-flat-button [routerLink]="['/add-shift-handover-page']" style="margin: 5px; padding-left: 1.3em; padding-right: 1.3em;">Add Shift Handover</button>
     </div>
   </div>
 
@@ -14,7 +14,7 @@
         <h2>Outgoing Approval</h2>
         <br>
         <div [align]=" 'end' ">
-          <button mat-flat-button [routerLink]="['/outgoing-approval-list-page']">View Outgoing</button>
+          <button mat-flat-button [routerLink]="['/outgoing-approval-list-page']" style="margin: 5px;">View Outgoing</button>
         </div>
       </div>
     </div>
@@ -23,15 +23,14 @@
         <h2>Incoming Approval</h2>
         <br>
         <div [align]=" 'end' ">
-          <button mat-flat-button [routerLink]="['/incoming-approval-list-page']">View Incoming</button>
+          <button mat-flat-button [routerLink]="['/incoming-approval-list-page']" style="margin: 5px;">View Incoming</button>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="grid-item" name="View Shift Handover" style="border: 3.5px solid #b44c97; margin-top: 14px; padding-bottom: 30px;">
-  
-    <app-shift-handover-page></app-shift-handover-page>
+  <div class="grid-item" name="View Shift Handover" style="border: 3.5px solid #b44c97; margin-top: 14px; padding-bottom: 30px; padding-left: 20px; padding-right: 20px;">
+    <app-shift-managements-table></app-shift-managements-table>
   </div>
 </div>
 
