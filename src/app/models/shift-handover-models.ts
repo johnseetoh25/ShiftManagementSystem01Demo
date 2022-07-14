@@ -1,5 +1,6 @@
 export interface ShiftHandoverModels {
   id: number;
+  SomId: string;
   shiftdate01: any;
   shift: any;
   team: any;

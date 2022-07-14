@@ -20,6 +20,7 @@ export class AddShiftHandoverPageComponent implements OnInit {
 
   ngOnInit(){
     this.shifthandoverForm = this.formBuilder.group({
+      somId: new FormControl(''),
       shiftdate01: ['', Validators.required],
       shift: ['', Validators.required],
       team: ['', Validators.required],

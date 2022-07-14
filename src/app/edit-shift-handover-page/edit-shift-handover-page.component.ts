@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ShiftHandoverModels } from '../models/shift-handover-models';
 import { ApiService } from '../services/api.service';
@@ -27,10 +27,10 @@ export class EditShiftHandoverPageComponent implements OnInit {
   ngOnInit(): void {
     this.getShiftHandoverByID(this.route.snapshot.params['id']);
     this.shifthandoverForm = this.formBuilder.group({
-      shiftdate01: new FormControl(''),
-      shift: new FormControl(''),
-      team: new FormControl(''),
-      subrole: new FormControl(''),
+      shiftdate01: new FormControl('', Validators.required),
+      shift: new FormControl('', Validators.required),
+      team: new FormControl('', Validators.required),
+      subrole: new FormControl('', Validators.required),
       outgoingapprovedby: new FormControl(''),
       shiftdate02:  new FormControl(''),
       outgoingwithcomment:  new FormControl(''),
@@ -82,7 +82,7 @@ export class EditShiftHandoverPageComponent implements OnInit {
       this.id = data.id;
       this.shifthandoverList = data;
 
-      this.shifthandoverForm.patchValue({ // patch value = refresh value, update value
+      this.shifthandoverForm.patchValue({ // patch value = refresh value, update value,
         shiftdate01: data.shiftdate01,
         shift: data.shift,
         team: data.team,
@@ -217,7 +217,7 @@ export class EditShiftHandoverPageComponent implements OnInit {
       }
 
       this.shifthandoverForm.valueChanges.subscribe((data)=>{
-        if (!data.outgoingapprovedby) {
+        if (!data.outgoingapprovedby && !data.incomingapprovelby) {
           this.doneApprovel = this.shifthandoverForm.disabled;
         } else {
           this.doneApprovel = this.shifthandoverForm.valid;

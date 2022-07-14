@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ShiftHandoverModels } from '../models/shift-handover-models';
 
 @Injectable({
@@ -10,8 +11,8 @@ export class ApiService {
   constructor(private http : HttpClient) { }
 
   // shift handover
-  postShiftHandover(data: any){
-    return this.http.post<any>("http://localhost:3000/shifthandoverList/", data);
+  postShiftHandover(body: ShiftHandoverModels = <ShiftHandoverModels>{}): Observable<any>{
+    return this.http.post("http://localhost:3000/shifthandoverList/", body);
   }
 
   getShiftHandover(){
