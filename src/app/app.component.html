@@ -1,11 +1,13 @@
-<mat-toolbar style="background-color:blueviolet">
-  <button mat-icon-button style="color: white;" [routerLink]="['']">
-    <mat-icon>home</mat-icon>
-  </button>
-  <span style="color: white;">Shift Operation Management</span>
-  <span class="spacer"></span>
+<mat-toolbar style="background-color:#e6162f; padding: 10px; height: 70px;">
+  <a [routerLink]="['']">
+    <img id="LogoIMG"  [src]="this.toolbarLogo" [alt] = "this.logoAlt" width = "50px" height = "50px" />
+  </a>
+  <span id="TemasekLabel">&emsp;Shift Managements System</span>
+  <!--<span class="spacer"></span>-->
 </mat-toolbar>
 
 <div class="container-fluid" >
-  <router-outlet></router-outlet>
+  <div class="card">
+    <router-outlet></router-outlet>
+  </div>
 </div>

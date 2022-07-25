@@ -1,12 +1,32 @@
 .container-fluid{
-  padding-top: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 10px;
-  width: 100%;
+  padding: 30px;
 
+  display: grid;
+  grid-template-columns: repeat(3);
+  grid-template-rows: repeat(3);
 }
 
 .spacer {
   flex: 1 1 auto;
 }
+
+#TemasekLabel{
+  color: white;
+  font-size: 24px;
+}
+
+#LogoIMG{
+  border-radius: 0.5em;
+}
+
+.card{
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.65);
+  border-radius: 1.4rem;
+
+  grid-row: 1;
+  grid-column: 1;
+
+}
+
+

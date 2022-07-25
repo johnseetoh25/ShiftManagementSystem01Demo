@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shift-operation-management';
+  public toolbarLogo: string = "assets/images/Logo.png";
+  public logoAlt: string = "Temasek Polytechnic";
+
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ShiftHandoverModels } from '../models/shift-handover-models';
 import { ApiService } from '../services/api.service';
 
@@ -13,9 +14,13 @@ export class AddShiftHandoverPageComponent implements OnInit {
 
   shifthandoverForm !: FormGroup
 
+  today = new Date();
+  dateToday = new FormControl(new Date());
+
   constructor(
     private formBuilder: FormBuilder,
     private api: ApiService,
+    private router: Router,
   ) {}
 
   ngOnInit(){
@@ -151,11 +156,17 @@ export class AddShiftHandoverPageComponent implements OnInit {
       this.api.postShiftHandover(this.shifthandoverForm.value)
       .subscribe((data: ShiftHandoverModels)=>{
         alert("Shift Handover Data added successfully");
+        this.router.navigate(['/shift-handover-page']);
       },()=>{
         alert("Error while adding the Shift Handover data");
       })
     }
   }
+
+  /*weekendFilter = (d: Date | null): boolean=>{
+    const day = (d || new Date()).getDay();
+    return day !== 0 && day!==6;
+  };*/
 
   // object array for the sub-data
   get safetyLogs(){

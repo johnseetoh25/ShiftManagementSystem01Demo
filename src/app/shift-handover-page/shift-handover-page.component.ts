@@ -13,7 +13,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class ShiftHandoverPageComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'date', 'shift', 'team', 'approval', 'action'];
+  displayedColumns: string[] = ['id', 'date', 'shift', 'team', 'outgoing', 'incoming', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -33,7 +33,7 @@ export class ShiftHandoverPageComponent implements OnInit {
     .subscribe(data=>{
       const sortState: Sort = {active: 'id', direction: 'desc'};
       this.dataSource = new MatTableDataSource(data);
-      
+
       this.sort.active = sortState.active;
       this.sort.direction = sortState.direction;
       this.sort.sortChange.emit(sortState);
@@ -46,7 +46,6 @@ export class ShiftHandoverPageComponent implements OnInit {
   openEditHandoverByID(row: any){
     this.router.navigate(['edit-shift-handover-page', row]);
   }
-
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

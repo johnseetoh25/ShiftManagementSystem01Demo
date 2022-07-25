@@ -46,6 +46,9 @@ export interface ShiftHandoverModels {
 
   // Shift Manning
   shift_mannings: ShiftMannings[];
+
+  //STATUS
+  status: string,
 }
 
 export interface SafetyLogs {

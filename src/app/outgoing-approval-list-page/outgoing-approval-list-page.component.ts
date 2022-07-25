@@ -13,7 +13,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class OutgoingApprovalListPageComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'date', 'shift', 'team', 'outgoing status', 'action'];
+  displayedColumns: string[] = ['id', 'date', 'shift', 'team', 'outgoing', 'incoming', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -38,7 +38,7 @@ export class OutgoingApprovalListPageComponent implements OnInit {
       this.sort.active = sortState.active;
       this.sort.direction = sortState.direction;
       this.sort.sortChange.emit(sortState);
-      
+
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });

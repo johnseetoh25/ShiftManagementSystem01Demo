@@ -19,11 +19,16 @@ export class IncomingApprovalFormPageComponent implements OnInit {
 
   doneApproved = false;
 
+  today = new Date();
+  dateToday = new FormControl(new Date());
+
+  public maxDays: Number = 7;
+
   constructor(
     private api: ApiService,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
-  ) { }
+  ) {  }
 
   ngOnInit(): void {
     // display the shift handover's details
@@ -228,7 +233,11 @@ export class IncomingApprovalFormPageComponent implements OnInit {
       // lock elements when which form done fill in
       if (data.incomingapprovelby) {
         lockElement(this.addIncomingApprovalForm);
-      } else {
+      }
+      else if(!data.outgoingapprovedby){
+        lockElement(this.addIncomingApprovalForm);
+      }
+      else {
         unlockElement(this.addIncomingApprovalForm);
       }
       this.addIncomingApprovalForm.valueChanges.subscribe((data)=>{
@@ -254,6 +263,11 @@ export class IncomingApprovalFormPageComponent implements OnInit {
       });
     }
   }
+
+  weekendFilter = (date: Date | null): boolean=>{
+    const day = (date || new Date()).getDay();
+    return day !== 0 && day!==6;
+  };
 
   // object array for the sub-data
   get safetyLogs(){

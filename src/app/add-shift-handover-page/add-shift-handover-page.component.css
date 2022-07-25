@@ -3,6 +3,23 @@ mat-form-field{
   padding: 0.5em;
 }
 
+.headingTitle{
+  font-size: 18px;
+}
+
+form{
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.mat-toolbar-row{
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
 #deleteIconRowBtn{
   color: salmon;
 }
@@ -64,6 +81,7 @@ table{
 
 td, tr{
   border: 1px solid;
+
 }
 
 th{

@@ -1,256 +1,302 @@
+<mat-toolbar style="background-color: transparent;">
+  <span>Outgoing Approvel Form</span>
+  <span class="spacer"></span>
+  <button mat-icon-button [routerLink]="['/outgoing-approval-list-page']" style="margin-right: 20px; color:blue;"><mat-icon>navigate_before</mat-icon>Back</button>
+</mat-toolbar>
+
 <div *ngIf="shiftHandoverData">
-  <div class="row">
-    <div class="col" style="background-color:#89c3eb; margin-left: 1em;">
-      <h2>
-        <label><b>Shift Handover ID:</b></label> {{shiftHandoverData.id}}
-      </h2>
-      <p>
-        <label><b>Date:</b></label> {{shiftHandoverData.shiftdate01 | date}}
-      </p>
-      <p>
-        <label><b>Shift:</b></label> {{shiftHandoverData.shift}}
-      </p>
-      <p>
-        <label><b>Team:</b></label> {{shiftHandoverData.team}}
-      </p>
+  <mat-card style="background-color: #89c3eb;">
+    <mat-card-title>
+      <mat-icon>info</mat-icon><b>&emsp;Shift Handover ID:</b>&emsp; {{shiftHandoverData.id}}
+    </mat-card-title>
+    <mat-card-content>
+      <p><label><b>Date:</b></label> {{shiftHandoverData.shiftdate01 | date: 'dd-MMMM-yyyy'}}</p>
+      <p><label><b>Shift:</b></label> {{shiftHandoverData.shift}}</p>
+      <p><label><b>Team:</b></label> {{shiftHandoverData.team}}</p>
       <br>
-      <p>
-        <label><b>Subrole:</b></label><br>{{shiftHandoverData.subrole}}
-      </p>
+      <p><label><b>Subrole:</b></label><br>{{shiftHandoverData.subrole}}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="row">
+    <div class="column">
+      <mat-card id="approvalCards">
+        <mat-card-title style="color: #89c3eb;">
+          <mat-icon>gesture</mat-icon>&emsp;Outgoing Approval
+        </mat-card-title>
+        <mat-card-content>
+          <form [formGroup]="addOutgoingApprovalForm">
+            <div class="row01">
+              <div class="col0101">
+                <mat-form-field appearance="fill">
+                  <mat-label>Outgoing approved by</mat-label>
+                  <input matInput formControlName="outgoingapprovedby">
+                </mat-form-field>
+              </div>
+              <div class="col0201" style="padding-left: 6px; ">
+                <mat-form-field appearance="fill" floatLabel="always">
+                  <mat-label>Date</mat-label>
+                  <input matInput
+                        [matDatepicker]="picker02"
+                        [min]="today"
+                        formControlName="shiftdate02"
+                        [(ngModel)]="dateToday"
+                        
+                  >
+                  <mat-hint>MM/DD/YYYY</mat-hint>
+                  <mat-datepicker-toggle matSuffix [for]="picker02"></mat-datepicker-toggle>
+                  <mat-datepicker #picker02></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </div>
+            <mat-form-field appearance="fill">
+              <mat-label>Outgoing with comment</mat-label>
+              <input matInput formControlName="outgoingwithcomment">
+            </mat-form-field>
+          </form>
+          <div [align]=" 'end' ">
+            <button mat-raised-button [disabled]="addOutgoingApprovalForm.disabled || doneApproved" (click)="submitOutgoingApprovelData()" id="saveSubmitBtn"> Save </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
     </div>
 
-    <div class="col" style="margin-right: 1em;">
-      <form [formGroup]="addOutgoingApprovalForm">
-        <div class="row01">
-          <div class="col0101">
-            <mat-form-field appearance="fill">
-              <mat-label>Outgoing approved by</mat-label>
-              <input matInput formControlName="outgoingapprovedby">
-            </mat-form-field>
-          </div>
-          <div class="col0201" style="padding-left: 1em;">
-            <mat-form-field appearance="fill">
-              <mat-label>Date</mat-label>
-              <input matInput [matDatepicker]="picker02" formControlName="shiftdate02">
-              <mat-hint>MM/DD/YYYY</mat-hint>
-              <mat-datepicker-toggle matSuffix [for]="picker02"></mat-datepicker-toggle>
-              <mat-datepicker #picker02></mat-datepicker>
-            </mat-form-field>
-          </div>
-        </div>
-
-        <mat-form-field appearance="fill">
-          <mat-label>Outgoing with comment</mat-label>
-          <input matInput formControlName="outgoingwithcomment">
-        </mat-form-field>
-      </form>
-      <div [align]=" 'end' ">
-        <button mat-raised-button [disabled]="addOutgoingApprovalForm.disabled || doneApproved" (click)="submitOutgoingApprovelData()" id="saveSubmitBtn"> Save </button>
-      </div>
-
-      <div id="incomingApprovalData">
-        <p>
-          <label><b>Incoming approved by:</b></label><br>{{shiftHandoverData.incomingapprovelby}} <i>{{shiftHandoverData.shiftdate03 | date}}</i>
-        </p>
-        <p>
-          <label><b>Incoming with comment:</b></label><br>{{shiftHandoverData.incomingwithcomment}}
-        </p>
-      </div>
+    <div class="column">
+      <mat-card id="approvalCards">
+        <mat-card-title style="color: #f2a0a1;">
+          <mat-icon>gesture</mat-icon>&emsp;Incoming Approval
+        </mat-card-title>
+        <mat-card-content>
+          <p><label><b>Incoming approved by:</b></label><br>{{shiftHandoverData.incomingapprovelby}} <i>{{shiftHandoverData.shiftdate03 | date: 'dd-MMMM-yyyy'}}</i></p>
+          <p><label><b>Incoming with comment:</b></label><br>{{shiftHandoverData.incomingwithcomment}}</p>
+        </mat-card-content>
+      </mat-card>
     </div>
-
   </div>
 
-  <br>
-  <h2>Health, Safety, Security and Enviromenet</h2>
-    <h4>Safety Logs</h4>
-    <table>
-      <tr>
-        <th style="width: 60%;">Description</th>
-        <th style="width: 30%;">Log Date Time</th>
-        <th style="width: 10%;">Status</th>
-      </tr>
-      <tr *ngFor="let safetylogs of shiftHandoverData.safety_logs">
-        <td>{{safetylogs.safetydescription}}</td>
-        <td>{{safetylogs.safetylogdate04 | date}} <i>{{safetylogs.safetylogtime01}}</i></td>
-        <td>{{safetylogs.safetystatus}}</td>
-      </tr>
-    </table>
+  <mat-card>
+    <mat-card-title><mat-icon>table</mat-icon>&emsp;Health, Safety, Security and Environment</mat-card-title>
+    <mat-card-content>
+      <h4>Safety Logs</h4>
+      <div class="SafetyLogsTable">
+        <table>
+          <tr>
+            <th style="width: 60%;">Description</th>
+            <th style="width: 30%;">Log Date Time</th>
+            <th style="width: 10%;">Status</th>
+          </tr>
+          <tr *ngFor="let safetylogs of shiftHandoverData.safety_logs">
+            <td>{{safetylogs.safetydescription}}</td>
+            <td>{{safetylogs.safetylogdate04 | date: 'dd-MMMM-yyyy'}} <i>{{safetylogs.safetylogtime01}}</i></td>
+            <td>{{safetylogs.safetystatus}}</td>
+          </tr>
+        </table>
+      </div>
 
-    <br>
-    <h4>Override Logs</h4>
-    <table>
-      <tr>
-        <th style="width: 60%;">Description</th>
-        <th style="width: 15%;">Log Date Time</th>
-        <th style="width: 15%;">Status</th>
-        <th style="width: 10%;">Tag ID</th>
-      </tr>
-      <tr *ngFor="let overridelogs of shiftHandoverData.override_logs">
-        <td>{{overridelogs.overridedescription}}</td>
-        <td>{{overridelogs.overridelogdate05 | date}} <i>{{overridelogs.overridelogtime02}}</i></td>
-        <td>{{overridelogs.overridestatus}}</td>
-        <td>{{overridelogs.overridetagid}}</td>
-      </tr>
-    </table>
+      <br>
+      <h4>Override Logs</h4>
+      <div class="OverrideLogsTable">
+        <table>
+          <tr>
+            <th style="width: 60%;">Description</th>
+            <th style="width: 15%;">Log Date Time</th>
+            <th style="width: 15%;">Status</th>
+            <th style="width: 10%;">Tag ID</th>
+          </tr>
+          <tr *ngFor="let overridelogs of shiftHandoverData.override_logs">
+            <td>{{overridelogs.overridedescription}}</td>
+            <td>{{overridelogs.overridelogdate05 | date: 'dd-MMMM-yyyy'}} <i>{{overridelogs.overridelogtime02}}</i></td>
+            <td>{{overridelogs.overridestatus}}</td>
+            <td>{{overridelogs.overridetagid}}</td>
+          </tr>
+        </table>
+      </div>
 
-    <br>
+      <br>
       <h4>Permit to Work</h4>
+      <div class="PermitToWorkTable">
+        <table>
+          <tr>
+            <th style="width: 60%;">Description</th>
+            <th style="width: 10%;">Type</th>
+            <th style="width: 10%;">Permit ID</th>
+            <th style="width: 10%;">Status</th>
+            <th style="width: 10%;">Priority</th>
+          </tr>
+          <tr *ngFor="let permittoworks of shiftHandoverData.permit_to_works">
+            <td>{{permittoworks.permitdescription}}</td>
+            <td>{{permittoworks.permittype}}</td>
+            <td>{{permittoworks.permitid}}</td>
+            <td>{{permittoworks.permitstatus}}</td>
+            <td>{{permittoworks.permitpriority}}</td>
+          </tr>
+        </table>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <br>
+  <mat-card>
+    <mat-card-title><mat-icon>table</mat-icon>&emsp;Instructions</mat-card-title>
+    <mat-card-content>
+      <h4>Dailly Operation Instruction</h4>
+      <div class="DaillyOperationInstructionTable">
+        <table>
+          <tr>
+            <th style="width: 50%;">Description</th>
+            <th style="width: 15%;">Planned Start Time</th>
+            <th style="width: 15%;">Planned End Time</th>
+            <th style="width: 10%;">Status</th>
+            <th style="width: 10%;">Priority</th>
+          </tr>
+          <tr>
+            <td>{{shiftHandoverData.dailyoperationdescription}}</td>
+            <td>{{shiftHandoverData.dailyoperationstartdate06 | date: 'dd-MMMM-yyyy'}} <i>{{shiftHandoverData.dailyoperationstarttime03}}</i></td>
+            <td>{{shiftHandoverData.dailyoperationenddate07 | date: 'dd-MMMM-yyyy'}} <i>{{shiftHandoverData.dailyoperationendtime04}}</i></td>
+            <td>{{shiftHandoverData.dailyoperationstatus}}</td>
+            <td>{{shiftHandoverData.dailyoperationpriority}}</td>
+          </tr>
+        </table>
+      </div>
+
+      <br>
+      <h4>Standing Instruction</h4>
+      <div class="StandingInstructionTable">
+        <table>
+          <tr>
+            <th style="width: 50%;">Description</th>
+            <th style="width: 15%;">Planned Start Time</th>
+            <th style="width: 15%;">Planned End Time</th>
+            <th style="width: 10%;">Status</th>
+            <th style="width: 10%;">Tag ID</th>
+          </tr>
+          <tr *ngFor="let standinginstructions of shiftHandoverData.standing_instruction">
+            <td>{{standinginstructions.standingdescription}}</td>
+            <td>{{standinginstructions.standingstartdate08 | date: 'dd-MMMM-yyyy'}} <i>{{standinginstructions.standingstarttime05}}</i></td>
+            <td>{{standinginstructions.standingenddate09 | date: 'dd-MMMM-yyyy'}} <i>{{standinginstructions.standingendtime06}}</i></td>
+            <td>{{standinginstructions.standingstatus}}</td>
+            <td>{{standinginstructions.standingpriority}}</td>
+          </tr>
+        </table>
+      </div>
+
+      <br>
+      <h4>Basic Operation Care</h4>
+      <div class="BasicOperationCareTable">
+        <table>
+          <tr>
+            <th style="width: 50%;">Description</th>
+            <th style="width: 15%;">Planned Start Time</th>
+            <th style="width: 15%;">Planned End Time</th>
+            <th style="width: 10%;">Status</th>
+            <th style="width: 10%;" colspan="2">Priority</th>
+          </tr>
+          <tr>
+            <td>{{shiftHandoverData.operationcaredescription}}</td>
+            <td>{{shiftHandoverData.operationcarestartdate | date: 'dd-MMMM-yyyy'}} <i>{{shiftHandoverData.operationcarestarttime}}</i></td>
+            <td>{{shiftHandoverData.operationcareenddate | date: 'dd-MMMM-yyyy'}} <i>{{shiftHandoverData.operationcareendtime}}</i></td>
+            <td>{{shiftHandoverData.operationcarestatus}}</td>
+            <td>{{shiftHandoverData.operationcarepriority}}</td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <th colspan="5">Check List</th>
+          </tr>
+          <tr>
+            <th style="width: 50%;">Check List Descriptions</th>
+            <th style="width: 10%;">Result</th>
+            <th style="width: 10%;">Remark</th>
+            <th style="width: 15%;">Checked by</th>
+            <th style="width: 15%;">Checked Date</th>
+          </tr>
+          <tr *ngFor="let operationchecklists of shiftHandoverData.operation_care_checklist">
+            <td>{{operationchecklists.checklistdescriptions}}</td>
+            <td>{{operationchecklists.checklistresult}}</td>
+            <td>{{operationchecklists.checklistremark}}</td>
+            <td>{{operationchecklists.checklistcheckedby}}</td>
+            <td>{{operationchecklists.checklistcheckeddate | date: 'dd-MMMM-yyyy'}} <i>{{operationchecklists.checklistcheckedtime}}</i></td>
+          </tr>
+        </table>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <br>
+  <mat-card>
+    <mat-card-title><mat-icon>table</mat-icon>&emsp;Highlights (Operational Logs)</mat-card-title>
+    <mat-card-content>
+      <div class="HighlightsOperationalLogsTable">
+        <table>
+          <tr>
+            <th style="width: 10%;">Area</th>
+            <th style="width: 50%;">Description</th>
+            <th style="width: 15%;">Type</th>
+            <th style="width: 15%;">Log Date Time</th>
+            <th style="width: 10%;">Status</th>
+          </tr>
+          <tr *ngFor="let unitshighlights of shiftHandoverData.highlight_operational_logs">
+            <td>{{unitshighlights.unitarea}}</td>
+            <td>{{unitshighlights.unitdescription}}</td>
+            <td>{{unitshighlights.unittype}}</td>
+            <td>{{unitshighlights.unitlogdate | date: 'dd-MMMM-yyyy'}} <i>{{unitshighlights.unitlogtime}}</i></td>
+            <td>{{unitshighlights.unitstatus}}</td>
+          </tr>
+        </table>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <br>
+  <mat-card>
+    <mat-card-title><mat-icon>table</mat-icon>&emsp;Items</mat-card-title>
+    <mat-card-content>
+      <div class="MaintenanceItemDetailsTable">
+        <table>
+          <tr>
+            <th style="min-width: 500px;">Description</th>
+            <th>Tag ID</th>
+            <th>Notification</th>
+            <th>Work Order</th>
+            <th style="min-width: 180px;">Planned Start Time</th>
+            <th style="min-width: 180px;">Planned End Time</th>
+            <th>Permit</th>
+            <th>Status</th>
+            <th>Priority</th>
+          </tr>
+          <tr *ngFor="let maintenances of shiftHandoverData.maintenance_items">
+            <td>{{maintenances.maintenancedescription}}</td>
+            <td>{{maintenances.maintenancetagid}}</td>
+            <td>{{maintenances.maintenancenotificationno}} <br> {{maintenances.maintenancenotificationstatus}}</td>
+            <td>{{maintenances.maintenanceworkoderno}} <br> {{maintenances.maintenanceworkorderstatus}}</td>
+            <td>{{maintenances.maintenanceplanedstartdate | date: 'dd-MMMM-yyyy'}} <i>{{maintenances.maintenanceplannedstarttime}}</i></td>
+            <td>{{maintenances.maintenanceplannedenddate | date: 'dd-MMMM-yyyy'}} <i>{{maintenances.maintenanceplannedendtime}}</i></td>
+            <td>{{maintenances.maintenancepermitnumber}} <br> {{maintenances.maintenancepermitstatus}}</td>
+            <td>{{maintenances.maintenancestatus}}</td>
+            <td>{{maintenances.maintenancepriority}}</td>
+          </tr>
+        </table>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <br>
+  <mat-card>
+    <mat-card-title><mat-icon>table</mat-icon>&emsp;Manning</mat-card-title>
+    <mat-card-content>
       <table>
         <tr>
-          <th style="width: 60%;">Description</th>
-          <th style="width: 10%;">Type</th>
-          <th style="width: 10%;">Permit ID</th>
-          <th style="width: 10%;">Status</th>
-          <th style="width: 10%;">Priority</th>
+          <th style="width: 50%;">Name</th>
+          <th style="width: 15%;">Sub Role</th>
+          <th style="width: 35%;">Remarks</th>
         </tr>
-        <tr *ngFor="let permittoworks of shiftHandoverData.permit_to_works">
-          <td>{{permittoworks.permitdescription}}</td>
-          <td>{{permittoworks.permittype}}</td>
-          <td>{{permittoworks.permitid}}</td>
-          <td>{{permittoworks.permitstatus}}</td>
-          <td>{{permittoworks.permitpriority}}</td>
+        <tr *ngFor="let shiftmannings of shiftHandoverData.shift_mannings">
+          <td>{{shiftmannings.shiftmanningname}}</td>
+          <td>{{shiftmannings.shiftmanningsubrole}}</td>
+          <td>{{shiftmannings.shiftmanningremarks}}</td>
         </tr>
       </table>
-
-  <br>
-  <h2>Instructions</h2>
-    <h4>Dailly Operation Instruction</h4>
-    <table>
-      <tr>
-        <th style="width: 50%;">Description</th>
-        <th style="width: 15%;">Planned Start Time</th>
-        <th style="width: 15%;">Planned End Time</th>
-        <th style="width: 10%;">Status</th>
-        <th style="width: 10%;">Priority</th>
-      </tr>
-      <tr>
-        <td>{{shiftHandoverData.dailyoperationdescription}}</td>
-        <td>{{shiftHandoverData.dailyoperationstartdate06 | date}} <i>{{shiftHandoverData.dailyoperationstarttime03}}</i></td>
-        <td>{{shiftHandoverData.dailyoperationenddate07 | date}} <i>{{shiftHandoverData.dailyoperationendtime04}}</i></td>
-        <td>{{shiftHandoverData.dailyoperationstatus}}</td>
-        <td>{{shiftHandoverData.dailyoperationpriority}}</td>
-      </tr>
-    </table>
-
-    <br>
-    <h4>Standing Instruction</h4>
-    <table>
-      <tr>
-        <th style="width: 50%;">Description</th>
-        <th style="width: 15%;">Planned Start Time</th>
-        <th style="width: 15%;">Planned End Time</th>
-        <th style="width: 10%;">Status</th>
-        <th style="width: 10%;">Tag ID</th>
-      </tr>
-      <tr *ngFor="let standinginstructions of shiftHandoverData.standing_instruction">
-        <td>{{standinginstructions.standingdescription}}</td>
-        <td>{{standinginstructions.standingstartdate08 | date}} <i>{{standinginstructions.standingstarttime05}}</i></td>
-        <td>{{standinginstructions.standingenddate09 | date}} <i>{{standinginstructions.standingendtime06}}</i></td>
-        <td>{{standinginstructions.standingstatus}}</td>
-        <td>{{standinginstructions.standingpriority}}</td>
-      </tr>
-    </table>
-
-    <br>
-    <h4>Basic Operation Care</h4>
-    <table>
-      <tr>
-        <th style="width: 50%;">Description</th>
-        <th style="width: 15%;">Planned Start Time</th>
-        <th style="width: 15%;">Planned End Time</th>
-        <th style="width: 10%;">Status</th>
-        <th style="width: 10%;" colspan="2">Priority</th>
-      </tr>
-      <tr>
-        <td>{{shiftHandoverData.operationcaredescription}}</td>
-        <td>{{shiftHandoverData.operationcarestartdate | date}} <i>{{shiftHandoverData.operationcarestarttime}}</i></td>
-        <td>{{shiftHandoverData.operationcareenddate | date}} <i>{{shiftHandoverData.operationcareendtime}}</i></td>
-        <td>{{shiftHandoverData.operationcarestatus}}</td>
-        <td>{{shiftHandoverData.operationcarepriority}}</td>
-      </tr>
-    </table>
-    <table>
-      <tr>
-        <th colspan="5">Check List</th>
-      </tr>
-      <tr>
-        <th style="width: 50%;">Check List Descriptions</th>
-        <th style="width: 10%;">Result</th>
-        <th style="width: 10%;">Remark</th>
-        <th style="width: 15%;">Checked by</th>
-        <th style="width: 15%;">Checked Date</th>
-      </tr>
-      <tr *ngFor="let operationchecklists of shiftHandoverData.operation_care_checklist">
-        <td>{{operationchecklists.checklistdescriptions}}</td>
-        <td>{{operationchecklists.checklistresult}}</td>
-        <td>{{operationchecklists.checklistremark}}</td>
-        <td>{{operationchecklists.checklistcheckedby}}</td>
-        <td>{{operationchecklists.checklistcheckeddate | date}} <i>{{operationchecklists.checklistcheckedtime}}</i></td>
-      </tr>
-    </table>
-
-  <br>
-  <h2>Highlights (Operational Logs)</h2>
-  <table>
-    <tr>
-      <th style="width: 10%;">Area</th>
-      <th style="width: 50%;">Description</th>
-      <th style="width: 10%;">Type</th>
-      <th style="width: 15%;">Log Date Time</th>
-      <th style="width: 10%;">Status</th>
-    </tr>
-    <tr *ngFor="let unitshighlights of shiftHandoverData.highlight_operational_logs">
-      <td>{{unitshighlights.unitarea}}</td>
-      <td>{{unitshighlights.unitdescription}}</td>
-      <td>{{unitshighlights.unittype}}</td>
-      <td>{{unitshighlights.unitlogdate | date}} <i>{{unitshighlights.unitlogtime}}</i></td>
-      <td>{{unitshighlights.unitstatus}}</td>
-    </tr>
-  </table>
-
-  <br>
-  <h2>Maintenance Items</h2>
-  <div class="MaintenanceItemDetailsTable">
-    <table>
-      <tr>
-        <th style="width: 50%;">Description</th>
-        <th style="width: 4%;">Tag ID</th>
-        <th style="width: 6%;">Notification</th>
-        <th style="width: 5%;">Work Order</th>
-        <th style="width: 9%;">Planned Start Time</th>
-        <th style="width: 9%;">Planned End Time</th>
-        <th style="width: 5%;">Permit</th>
-        <th style="width: 6%;">Status</th>
-        <th style="width: 4%;">Priority</th>
-      </tr>
-      <tr *ngFor="let maintenances of shiftHandoverData.maintenance_items">
-        <td>{{maintenances.maintenancedescription}}</td>
-        <td>{{maintenances.maintenancetagid}}</td>
-        <td>{{maintenances.maintenancenotificationno}} <br> {{maintenances.maintenancenotificationstatus}}</td>
-        <td>{{maintenances.maintenanceworkoderno}} <br> {{maintenances.maintenanceworkorderstatus}}</td>
-        <td>{{maintenances.maintenanceplanedstartdate | date}} <i>{{maintenances.maintenanceplannedstarttime}}</i></td>
-        <td>{{maintenances.maintenanceplannedenddate | date}} <i>{{maintenances.maintenanceplannedendtime}}</i></td>
-        <td>{{maintenances.maintenancepermitnumber}} <br> {{maintenances.maintenancepermitstatus}}</td>
-        <td>{{maintenances.maintenancestatus}}</td>
-        <td>{{maintenances.maintenancepriority}}</td>
-      </tr>
-    </table>
-  </div>
-
-  <br>
-  <h2>Shift Manning</h2>
-  <table>
-    <tr>
-      <th style="width: 50%;">Name</th>
-      <th style="width: 15%;">Sub Role</th>
-      <th style="width: 35%;">Remarks</th>
-    </tr>
-    <tr *ngFor="let shiftmannings of shiftHandoverData.shift_mannings">
-      <td>{{shiftmannings.shiftmanningname}}</td>
-      <td>{{shiftmannings.shiftmanningsubrole}}</td>
-      <td>{{shiftmannings.shiftmanningremarks}}</td>
-    </tr>
-  </table>
+    </mat-card-content>
+  </mat-card>
 
 </div>
-<br>

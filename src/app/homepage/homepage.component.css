@@ -1,27 +1,61 @@
-.grid-container{
-  width: 100%;
-  display: grid;
-  row-gap: 10px;
-}
-
-.grid-item{
-  width: 100%;
-  padding: 15px;
-}
-
 button{
   color: white;
   background-color: #65318e;
+  width: 170px;
 }
 
-.col {
-  float: left;
-  width: 50%;
+#title_container{
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  border: 6px double cornflowerblue;
+  border-radius: 1.8em;
+  text-align: center;
 }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+mat-icon{
+  font-size: 28px;
+  font-weight: bold;
+  color:cornflowerblue;
 }
+
+mat-card{
+  background-color:#dbd0e6;
+}
+
+mat-card-title{
+  padding-top: 4px;
+  font-weight: 500;
+}
+
+mat-card-content{
+  height: 100px;
+}
+
+
+/*Columns in Row CSS*/
+.column {
+  padding: 0;
+  margin: 0;
+}
+
+.row {
+  max-width: 100%;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-gap: 18px;
+}
+
+@media (min-width: 570px) {
+  .row{ grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
 

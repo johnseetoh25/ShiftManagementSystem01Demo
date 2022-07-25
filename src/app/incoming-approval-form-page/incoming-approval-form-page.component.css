@@ -1,23 +1,22 @@
-p{
-  font-size: 15px;
-}
-
 label{
   font-family: Arial, sans-serif;
-  font-size: 16.5px;
 }
 
 mat-form-field{
   width: 100%;
 }
 
+.mat-toolbar{
+  padding: 0;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
 #outgoingApprovalData{
   padding-top: 10px;
   padding-bottom: 20px;
-}
-
-#incomingApprovalDetailsLists{
-  padding-bottom: 60px;
 }
 
 #saveSubmitBtn{
@@ -30,35 +29,35 @@ mat-form-field{
   color:white;
 }
 
+#approvalCards{
+  height: 245px;
+}
+
 /*Columns in Row CSS*/
-*{
+* {
   box-sizing: border-box;
 }
 
-.col {
-  float: left;
-  width: 50%;
-
-  padding-top: 20px;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  padding-bottom: 20px;
+.column {
+  flex: 50%;
+  padding: 13px;
 }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.row {
+  display: flex;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .col0101{
   float: left;
-  width: 60%;
+  width: 55%;
 }
 
 .col0201{
   float: left;
-  width: 40%;
+  width: 45%;
 }
 
 .row01:after {
@@ -85,6 +84,8 @@ td, tr{
 
 td{
   font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 th{
@@ -98,8 +99,52 @@ tr:hover {
   background-color:lightgrey;
 }
 
+.SafetyLogsTable{
+  width: 100%;
+  overflow: auto;
+  table-layout: fixed;
+}
+
+.OverrideLogsTable{
+  width: 100%;
+  overflow: auto;
+  table-layout: fixed;
+}
+
+.PermitToWorkTable{
+  width: 100%;
+  overflow: auto;
+  table-layout: fixed;
+}
+
+.DaillyOperationInstructionTable{
+  width: 100%;
+  overflow: auto;
+  table-layout: fixed;
+}
+
+.StandingInstructionTable{
+  width: 100%;
+  overflow: auto;
+  table-layout: fixed;
+}
+
+.BasicOperationCareTable{
+  width: 100%;
+  overflow: auto;
+  table-layout: fixed;
+}
+
+.HighlightsOperationalLogsTable{
+  width: 100%;
+  overflow: auto;
+  table-layout: fixed;
+}
+
 .MaintenanceItemDetailsTable{
   width: 100%;
   overflow: auto;
   table-layout: fixed;
 }
+
+

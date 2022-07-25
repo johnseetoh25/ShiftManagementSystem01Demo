@@ -20,3 +20,11 @@ th.mat-header-cell, td.mat-cell{
 .table-container{
   overflow: auto;
 }
+
+.mat-toolbar{
+  padding: 0px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

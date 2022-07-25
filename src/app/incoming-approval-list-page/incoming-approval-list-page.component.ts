@@ -13,7 +13,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class IncomingApprovalListPageComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'date', 'shift', 'team', 'incoming status', 'action'];
+  displayedColumns: string[] = ['id', 'date', 'shift', 'team', 'outgoing', 'incoming', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

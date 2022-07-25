@@ -19,11 +19,17 @@ export class OutgoingApprovalFormPageComponent implements OnInit {
 
   doneApproved = false;
 
+  today = new Date();
+  tomorrow = new Date();
+  minDate = new Date();
+  public dateToday = new Date();
+
+
   constructor(
     private api: ApiService,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
-  ) { }
+  ) { this.tomorrow.setDate(this.today.getDate() + 1); }
 
   ngOnInit(): void {
     // display the shift handover's details
@@ -40,7 +46,7 @@ export class OutgoingApprovalFormPageComponent implements OnInit {
     this.addOutgoingApprovalForm = this.formBuilder.group({
       // add outgoing approvel forms
       outgoingapprovedby:  new FormControl('', Validators.required),
-      shiftdate02:  new FormControl('', Validators.required),
+      shiftdate02:  new FormControl(new Date(), Validators.required),
       outgoingwithcomment:  new FormControl('', Validators.required),
 
       // base form for shift handover
@@ -88,6 +94,12 @@ export class OutgoingApprovalFormPageComponent implements OnInit {
 
     });
   }
+
+  weekendFilter = (date: Date | null): boolean=>{
+    const day = (date || new Date()).getDay();
+    return day !== 0 && day!==6;
+  };
+
 
   addOutgoingApprovalByID(id: any){
     this.api.getOneShiftHandoverbyID(id)

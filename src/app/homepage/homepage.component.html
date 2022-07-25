@@ -1,37 +1,63 @@
-<div class="grid-container">
-  <div class="grid-item" name="Operation Shift Handover" style="border: 3.5px solid #b44c97; margin-top: 14px;">
-    <h2>Operation Shift Handover</h2>
-    <br>
-    <div [align]=" 'end' ">
-      <button mat-flat-button [routerLink]="['/shift-handover-page']" style="margin: 5px;">View Shift Handover</button>
-      <button mat-flat-button [routerLink]="['/add-shift-handover-page']" style="margin: 5px; padding-left: 1.3em; padding-right: 1.3em;">Add Shift Handover</button>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col">
-      <div class="grid-item" name="Outgoing Approvel" style="border: 3.5px solid #b44c97; margin-top: 10px;">
-        <h2>Outgoing Approval</h2>
-        <br>
-        <div [align]=" 'end' ">
-          <button mat-flat-button [routerLink]="['/outgoing-approval-list-page']" style="margin: 5px;">View Outgoing</button>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="grid-item" name="Incoming Approvel" style="border: 3.5px solid #b44c97; margin-top: 10px;">
-        <h2>Incoming Approval</h2>
-        <br>
-        <div [align]=" 'end' ">
-          <button mat-flat-button [routerLink]="['/incoming-approval-list-page']" style="margin: 5px;">View Incoming</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="grid-item" name="View Shift Handover" style="border: 3.5px solid #b44c97; margin-top: 14px; padding-bottom: 30px; padding-left: 20px; padding-right: 20px;">
-    <app-shift-managements-table></app-shift-managements-table>
-  </div>
+<div id="title_container">
+  <h1 style="font-size: 36px; font-weight: 600;color: #65318e;">Shift Operation Handover</h1>
 </div>
+
+<div class="row">
+
+  <div class="column">
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar><mat-icon>star</mat-icon></div>
+        <mat-card-title>Operation Shift Handover</mat-card-title>
+      </mat-card-header>
+      <mat-card-content></mat-card-content>
+      <mat-card-actions [align]=" 'end' ">
+        <button mat-flat-button [routerLink]="['/add-shift-handover-page']">Add Shift Handover</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div class="column">
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar><mat-icon>star</mat-icon></div>
+        <mat-card-title>Shift Handover Record</mat-card-title>
+      </mat-card-header>
+      <mat-card-content></mat-card-content>
+      <mat-card-actions [align]=" 'end' ">
+        <button mat-flat-button [routerLink]="['/shift-handover-page']">View Shift Handover</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div class="column">
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar><mat-icon>star</mat-icon></div>
+        <mat-card-title>Outgoing Approval</mat-card-title>
+      </mat-card-header>
+      <mat-card-content></mat-card-content>
+      <mat-card-actions [align]=" 'end' ">
+        <button mat-flat-button [routerLink]="['/outgoing-approval-list-page']">View Outgoing</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div class="column">
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar><mat-icon>star</mat-icon></div>
+        <mat-card-title>Incoming Approval</mat-card-title>
+      </mat-card-header>
+      <mat-card-content></mat-card-content>
+      <mat-card-actions [align]=" 'end' ">
+        <button mat-flat-button [routerLink]="['/incoming-approval-list-page']">View Incoming</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+</div>
+
+
 
 

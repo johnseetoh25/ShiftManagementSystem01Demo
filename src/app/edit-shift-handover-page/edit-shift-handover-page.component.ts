@@ -18,6 +18,9 @@ export class EditShiftHandoverPageComponent implements OnInit {
 
   doneApprovel = false;
 
+  today = new Date();
+  dateToday = new FormControl(new Date());
+
   constructor(
     private formBuilder : FormBuilder,
     private api : ApiService,
@@ -239,6 +242,11 @@ export class EditShiftHandoverPageComponent implements OnInit {
       alert("Error while updating the record");
     });
   }
+
+  /*weekendFilter = (d: Date | null): boolean=>{
+    const day = (d || new Date()).getDay();
+    return day !== 0 && day!==6;
+  };*/
 
   // object array for the sub-data
   get safetyLogs(){

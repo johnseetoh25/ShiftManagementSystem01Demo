@@ -1,12 +1,21 @@
-<h3>Add Operation Dialy Summary</h3>
+<mat-toolbar-row>
+  <mat-icon>add</mat-icon><div class="headingTitle">Operation Dialy Summary</div>
+  <span class="spacer"></span>
+  <button mat-icon-button [routerLink]="['']" style="margin-right: 30px; color:blue;"><mat-icon>navigate_before</mat-icon>Back</button>
+</mat-toolbar-row>
 
-  <form [formGroup]="shifthandoverForm">
+  <form [formGroup]="shifthandoverForm" style="padding: 10px;">
     <div name="base form">
       <div class="row">
         <div class="col">
           <mat-form-field appearance="fill">
             <mat-label>Date</mat-label>
-            <input matInput [matDatepicker]="picker01" formControlName="shiftdate01">
+            <input matInput
+                   [matDatepicker]="picker01"
+                   [min]="today"
+                   [placeholder]="dateToday.value"
+
+                   formControlName="shiftdate01">
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matSuffix [for]="picker01"></mat-datepicker-toggle>
             <mat-datepicker #picker01></mat-datepicker>
@@ -103,7 +112,12 @@
                 <div class="col0101">
                   <mat-form-field appearance="fill">
                     <mat-label>Date</mat-label>
-                    <input matInput [matDatepicker]="picker04" formControlName="safetylogdate04">
+                    <input matInput
+                           [matDatepicker]="picker04"
+                           [min]="today"
+                           [placeholder]="dateToday.value"
+
+                           formControlName="safetylogdate04">
                     <mat-hint>MM/DD/YYYY</mat-hint>
                     <mat-datepicker-toggle matSuffix [for]="picker04"></mat-datepicker-toggle>
                     <mat-datepicker #picker04></mat-datepicker>
@@ -158,7 +172,12 @@
                 <div class="col0101">
                   <mat-form-field appearance="fill">
                     <mat-label>Date</mat-label>
-                    <input matInput [matDatepicker]="picker05" formControlName="overridelogdate05">
+                    <input matInput
+                           [matDatepicker]="picker05"
+                           [min]="today"
+                           [placeholder]="dateToday.value"
+
+                           formControlName="overridelogdate05">
                     <mat-hint>MM/DD/YYYY</mat-hint>
                     <mat-datepicker-toggle matSuffix [for]="picker05"></mat-datepicker-toggle>
                     <mat-datepicker #picker05></mat-datepicker>
@@ -270,7 +289,12 @@
                 <div class="col0101">
                   <mat-form-field appearance="fill">
                     <mat-label>Date</mat-label>
-                    <input matInput [matDatepicker]="picker06" formControlName="dailyoperationstartdate06">
+                    <input matInput
+                           [matDatepicker]="picker06"
+                           [min]="today"
+                           [placeholder]="dateToday.value"
+
+                           formControlName="dailyoperationstartdate06">
                     <mat-hint>MM/DD/YYYY</mat-hint>
                     <mat-datepicker-toggle matSuffix [for]="picker06"></mat-datepicker-toggle>
                     <mat-datepicker #picker06></mat-datepicker>
@@ -292,7 +316,12 @@
                 <div class="col0101">
                   <mat-form-field appearance="fill">
                     <mat-label>Date</mat-label>
-                    <input matInput [matDatepicker]="picker07" formControlName="dailyoperationenddate07">
+                    <input matInput
+                           [matDatepicker]="picker07"
+                           [min]="today"
+                           [placeholder]="dateToday.value"
+
+                           formControlName="dailyoperationenddate07">
                     <mat-hint>MM/DD/YYYY</mat-hint>
                     <mat-datepicker-toggle matSuffix [for]="picker07"></mat-datepicker-toggle>
                     <mat-datepicker #picker07></mat-datepicker>
@@ -354,7 +383,12 @@
                 <div class="col0101">
                   <mat-form-field appearance="fill">
                     <mat-label>Date</mat-label>
-                    <input matInput [matDatepicker]="picker08" formControlName="standingstartdate08">
+                    <input matInput
+                           [matDatepicker]="picker08"
+                           [min]="today"
+                           [placeholder]="dateToday.value"
+
+                           formControlName="standingstartdate08">
                     <mat-hint>MM/DD/YYYY</mat-hint>
                     <mat-datepicker-toggle matSuffix [for]="picker08"></mat-datepicker-toggle>
                     <mat-datepicker #picker08></mat-datepicker>
@@ -376,7 +410,12 @@
                 <div class="col0101">
                   <mat-form-field appearance="fill">
                     <mat-label>Date</mat-label>
-                    <input matInput [matDatepicker]="picker09" formControlName="standingenddate09">
+                    <input matInput
+                           [matDatepicker]="picker09"
+                           [min]="today"
+                           [placeholder]="dateToday.value"
+
+                           formControlName="standingenddate09">
                     <mat-hint>MM/DD/YYYY</mat-hint>
                     <mat-datepicker-toggle matSuffix [for]="picker09"></mat-datepicker-toggle>
                     <mat-datepicker #picker09></mat-datepicker>
@@ -440,7 +479,12 @@
             <td>
               <mat-form-field appearance="fill">
                 <mat-label>Date</mat-label>
-                <input matInput [matDatepicker]="picker10" formControlName="operationcarestartdate">
+                <input matInput
+                       [matDatepicker]="picker10"
+                       [min]="today"
+                       [placeholder]="dateToday.value"
+
+                       formControlName="operationcarestartdate">
                 <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matSuffix [for]="picker10"></mat-datepicker-toggle>
                 <mat-datepicker #picker10></mat-datepicker>
@@ -457,7 +501,12 @@
             <td>
               <mat-form-field appearance="fill">
                 <mat-label>Date</mat-label>
-                <input matInput [matDatepicker]="picker11" formControlName="operationcareenddate">
+                <input matInput
+                       [matDatepicker]="picker11"
+                       [min]="today"
+                       [placeholder]="dateToday.value"
+
+                       formControlName="operationcareenddate">
                 <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matSuffix [for]="picker11"></mat-datepicker-toggle>
                 <mat-datepicker #picker11></mat-datepicker>
@@ -531,7 +580,12 @@
             <td>
               <mat-form-field appearance="fill">
                 <mat-label>Date</mat-label>
-                <input matInput [matDatepicker]="picker12" formControlName="checklistcheckeddate">
+                <input matInput
+                       [matDatepicker]="picker12"
+                       [min]="today"
+                       [placeholder]="dateToday.value"
+
+                       formControlName="checklistcheckeddate">
                 <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matSuffix [for]="picker12"></mat-datepicker-toggle>
                 <mat-datepicker #picker12></mat-datepicker>
@@ -595,7 +649,12 @@
                 <div class="col0101">
                   <mat-form-field appearance="fill">
                     <mat-label>Date</mat-label>
-                    <input matInput [matDatepicker]="picker13" formControlName="unitlogdate">
+                    <input matInput
+                           [matDatepicker]="picker13"
+                           [min]="today"
+                           [placeholder]="dateToday.value"
+
+                           formControlName="unitlogdate">
                     <mat-hint>MM/DD/YYYY</mat-hint>
                     <mat-datepicker-toggle matSuffix [for]="picker13"></mat-datepicker-toggle>
                     <mat-datepicker #picker13></mat-datepicker>
@@ -682,7 +741,12 @@
           <td>
             <mat-form-field appearance="fill" style="width: 150px;">
               <mat-label>Date</mat-label>
-              <input matInput [matDatepicker]="picker14" formControlName="maintenanceplanedstartdate">
+              <input matInput
+                     [matDatepicker]="picker14"
+                     [min]="today"
+                     [placeholder]="dateToday.value"
+
+                     formControlName="maintenanceplanedstartdate">
               <mat-hint>MM/DD/YYYY</mat-hint>
               <mat-datepicker-toggle matSuffix [for]="picker14"></mat-datepicker-toggle>
               <mat-datepicker #picker14></mat-datepicker>
@@ -699,7 +763,12 @@
           <td>
             <mat-form-field appearance="fill" style="width: 150px;">
               <mat-label>Date</mat-label>
-              <input matInput [matDatepicker]="picker15" formControlName="maintenanceplannedenddate">
+              <input matInput
+                     [matDatepicker]="picker15"
+                     [min]="today"
+                     [placeholder]="dateToday.value"
+
+                     formControlName="maintenanceplannedenddate">
               <mat-hint>MM/DD/YYYY</mat-hint>
               <mat-datepicker-toggle matSuffix [for]="picker15"></mat-datepicker-toggle>
               <mat-datepicker #picker15></mat-datepicker>
@@ -795,13 +864,13 @@
       </div>
     </div>
 
+    <div [align]=" 'end' " style="margin-top: 20px;">
+      <button mat-raised-button (click)="addShiftHandover()" id="saveSubmitBtn" > Save </button>
+    </div>
+
   </form>
 
-  <br>
 
-  <div [align]=" 'end' ">
-    <button mat-raised-button (click)="addShiftHandover()" id="saveSubmitBtn" > Save </button>
-  </div>
 
 
 
